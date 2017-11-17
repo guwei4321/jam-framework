@@ -1,0 +1,17 @@
+{
+  "name": "jam-framework",
+  "version": "0.0.1",
+  "description": "pc js ui framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pc",
+    "js",
+    "ui",
+    "framework"
+  ],
+  "author": "guwei",
+  "license": "ISC"
+}

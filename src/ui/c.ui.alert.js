@@ -24,16 +24,15 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
     options.__propertys__ = function () {
         this.tpl = [
             '<div class="cui-pop-box">',
-            '{{#showTitle}}',
-            '<div class="cui-hd">',
-            '<div class="cui-text-center">{{title}}</div>',
-            '</div>',
-            '{{/showTitle}}',
-            '<div class="cui-bd">',
-            '<div class="cui-error-tips">{{message}}</div>',
-            '<div class="cui-roller-btns">',
-            '</div>',
-            '</div>',
+                '{{#showTitle}}',
+                    '<div class="cui-hd">',
+                        '<div class="cui-text-center">{{title}}</div>',
+                    '</div>',
+                '{{/showTitle}}',
+                '<div class="cui-bd">',
+                    '<div class="cui-error-tips">{{message}}</div>',
+                    '<div class="cui-roller-btns"></div>',
+                '</div>',
             '</div>'
         ].join('')
         this.title = '';

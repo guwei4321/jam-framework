@@ -1,7 +1,7 @@
 ﻿/**
 * @description 蒙版
 */
-define(['libs', 'cBase', 'cUIAbstractView'], function (libs, cBase, AbstractView) {
+define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, cUIBase, AbstractView) {
 
     var options = {};
 
@@ -30,29 +30,27 @@ define(['libs', 'cBase', 'cUIAbstractView'], function (libs, cBase, AbstractView
             this.onResize = $.proxy(function () {
                 this.resize();
             }, this);
-            this.onKeydown = $.proxy(function(e){
-                this.preventScrool(e);
+            this.prevent = $.proxy(function() {
+                cUIBase.preventDefault();
             }, this);
 
             this.onResize();
         });
 
         this.addEvent('onShow', function () {
+            var that = this;
             this.setzIndexTop(-1);
             $(window).bind('resize', this.onResize);
-            $(window).bind('keydown', this.onKeydown);
-
-            // this.root.bind('touchmove', function (e) {
-            //     e.preventDefault();
-            // });
-
+            $(window).bind('keydown', this.prevent);
+            $(window).bind('mousewheel', this.prevent );
 
             this.onResize();
         });
 
         this.addEvent('onHide', function () {
             $(window).unbind('resize', this.onResize);
-            // this.root.unbind('touchmove');
+            $(window).unbind('keydown', this.prevent);
+            $(window).unbind('mousewheel', this.prevent);
         });
 
     };
@@ -82,38 +80,11 @@ define(['libs', 'cBase', 'cUIAbstractView'], function (libs, cBase, AbstractView
     * @description 尺寸改变时候要重新计算位置
     */
     options.resize = function () {
-        var w = Math.max(document.documentElement.clientWidth, document.body.clientWidth); // 取可视区域宽度
-        var h = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight); // 取页面高度
-
+        var pos  = cUIBase.getPageScrollPos();
         this.root.css({
-            width: w + 'px',
-            height: h + 'px'
+            width: pos.width + 'px',
+            height: pos.pageHeight + 'px'
         });
-    };
-
-    /**
-     * @method preventDefault
-     * @description 阻止默认事件
-     */
-    options.preventDefault = function (e){
-        e = e || window.event;
-        if (e.preventDefault)
-            e.preventDefault();
-        e.returnValue = false;
-    }
-
-    /**
-    * @method preventScrool
-    * @description 键盘上下左右滚动
-    */
-    options.preventScrool = function (e) {
-        var keys = [37, 38, 39, 40];
-        for (var i = keys.length; i--;) {
-            if (e.keyCode === keys[i]) {
-                e.preventDefault();
-                return;
-            }
-        }
     };
 
     return new cBase.Class(AbstractView, options);

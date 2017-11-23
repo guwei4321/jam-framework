@@ -215,6 +215,31 @@ define([], function () {
         return el;
     };
 
+    /**
+    * @method preventDefault
+    * @description 阻止默认事件
+    */
+    base.preventDefault = function (e) {
+        e = e || window.event;
+        if (e.preventDefault)
+            e.preventDefault();
+        e.returnValue = false;
+    }
+
+    /**
+    * @method preventScrool
+    * @description 键盘上下左右滚动
+    */
+    base.preventScrool = function (e) {
+        var keys = [37, 38, 39, 40];
+        for (var i = keys.length; i--;) {
+            if (e.keyCode === keys[i]) {
+                e.preventDefault();
+                return;
+            }
+        }
+    };
+
     return base;
 
 });

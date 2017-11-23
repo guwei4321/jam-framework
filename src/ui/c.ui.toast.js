@@ -51,17 +51,7 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
         var scope = this;
         this.setContent(title);
 
-        //在toast显示前，就计算出显示的位置 shbzhang 2014-10-14 17:30:12
-        var el = document.activeElement;
-        if ($.needFocus(el)) {
-            if (!this.focusPosition) this.focusPosition = true;
-            var _top = parseInt($(el).offset().top) + 30;
-            this.root.css({ 'top': _top + 'px', position: 'absolute' });
-
-            this.reposition = function () { };
-        } else {
-            this.reposition = _superReposition;
-        }
+        this.reposition = _superReposition;
 
         if (typeof _showHandler === 'function') {
             _showHandler.call(this);

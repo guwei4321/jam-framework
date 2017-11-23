@@ -16,11 +16,11 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
 
     /** 相关属性 */
     options.__propertys__ = function () {
-        this.tpl = this.template([
+        this.tpl = [
             '<div class="' + _config.prefix + 'layer-padding">',
-            '<div class="' + _config.prefix + 'layer-content"><%=content%></div>',
+            '<div class="' + _config.prefix + 'layer-content">{{content}}</div>',
             '</div>'
-        ].join(''));
+        ].join('');
         this.content = '';
         this.contentDom;
         this.mask = new Mask({
@@ -118,7 +118,7 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
     * @description 移除各个事件点添加需要回调的函数
     */
     options.createHtml = function () {
-        return this.tpl(this.viewdata);
+        return mustache.to_html(this.tpl, this.viewdata).replace(/^\s*/mg, '')
     };
 
     /**

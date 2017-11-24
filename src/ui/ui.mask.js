@@ -6,7 +6,7 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
     var options = {};
 
     var _config = {
-        prefix: 'cui-'
+        prefix: 'jui-'
     };
 
     /** 相关属性 */

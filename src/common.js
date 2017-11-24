@@ -41,91 +41,107 @@ require.config({
         // ---------------------------------------------------
         // common 基础库
         'c': app + 'common/c',
-        'cBase': app + 'common/c.base',
-        'cAjax': app + 'common/c.ajax',
-        'cLazyload': app + 'common/c.lazyload', //加载
-        'cListAdapter': app + 'common/c.common.listadapter',
-        'cGeoService': app + 'common/c.geo.service',
-        'cGeoHelper': app + 'common/c.geo.helper',
-        'cImgLazyload': app + 'common/c.img.lazyload',
+        'cBase': app + 'common/base',
+        'cAjax': app + 'common/ajax',
+        'cLazyload': app + 'common/lazyload', //加载
+        'cListAdapter': app + 'common/common.listadapter',
+        'cGeoService': app + 'common/geo.service',
+        'cGeoHelper': app + 'common/geo.helper',
+        'cImgLazyload': app + 'common/img.lazyload',
 
 
         // util-----------------------------------------------------------
-        'cUtilityHash': app + 'util/c.utility.hash',
-        'cUtilityDate': app + 'util/c.utility.date', // Date对象，对时间提供一些常用方法
-        'cUtilityServertime': app + 'util/c.utility.servertime',
-        'cUtilityCrypt': app + 'util/c.utility.crypt',
-        'cUtility': app + 'util/c.utility',
-        'Validate': app + 'util/c.validate', //数据验证
+        'cUtilityHash': app + 'util/utility.hash',
+        'cUtilityDate': app + 'util/utility.date', // Date对象，对时间提供一些常用方法
+        'cUtilityServertime': app + 'util/utility.servertime',
+        'cUtilityCrypt': app + 'util/utility.crypt',
+        'cUtility': app + 'util/utility',
+        'Validate': app + 'util/validate', //数据验证
 
 
         //-------------------------------------------------------------
-        'cCoreInherit': app + 'core/c.core.inherit', // Class类，框架的基础类体系
+        'cCoreInherit': app + 'core/core.inherit', // Class类，框架的基础类体系
 
         //-------------------------------------------------------------
         // Store
-        'cAbstractStore': app + 'store/c.abstract.store', //抽象store
-        'cAbstractStorage': app + 'store/c.abstract.storage', //抽象storage
-        'cStore': app + 'store/c.local.store', //提供存取具体数据的Store基础类
-        'cStorage': app + 'store/c.local.storage', //提供存取localStorage/sessionStorage的静态方法
-        'cSessionStore': app + 'store/c.session.store', //提供存取具体数据的Store基础类
-        'cSessionStorage': app + 'store/c.session.storage', //提供存取localStorage/sessionStorage的静态方法
-        'memStore': app + 'store/c.memorystore',
-        'CommonStore': app + 'store/c.common.store', //公用的store
-        'PageStore': app + 'store/c.store.package',
+        'cAbstractStore': app + 'store/abstract.store', //抽象store
+        'cAbstractStorage': app + 'store/abstract.storage', //抽象storage
+        'cStore': app + 'store/local.store', //提供存取具体数据的Store基础类
+        'cStorage': app + 'store/local.storage', //提供存取localStorage/sessionStorage的静态方法
+        'cSessionStore': app + 'store/session.store', //提供存取具体数据的Store基础类
+        'cSessionStorage': app + 'store/session.storage', //提供存取localStorage/sessionStorage的静态方法
+        'memStore': app + 'store/memorystore',
+        'CommonStore': app + 'store/common.store', //公用的store
+        'PageStore': app + 'store/store.package',
 
         //-----------------------------------------------------------
         // UI组件
-        'cUI': app + 'ui/c.ui',
-        'cUICore': app + 'ui/c.ui.core',
-        'cHistory': app + 'ui/c.ui.history',
-        'cUIView': app + 'ui/c.ui.view',
-        'cDataSource': app + 'ui/c.ui.datasource', //数据源
-        'cUIBase': app + 'ui/c.ui.base',
-        'cUIAbstractView': app + 'ui/c.ui.abstract.view',
+        'cUI': app + 'ui/ui',
+        'cUICore': app + 'ui/ui.core',
+        'cHistory': app + 'ui/ui.history',
+        'cUIView': app + 'ui/ui.view',
+        'cDataSource': app + 'ui/ui.datasource', //数据源
+        'cUIBase': app + 'ui/ui.base',
+        'cUIAbstractView': app + 'ui/ui.abstract.view',
 
-        'cUIAlert': app + 'ui/c.ui.alert',
-        'cUIAnimation': app + 'ui/c.ui.animation',
-        'cUICitylist': app + 'ui/c.ui.citylist',
-        'cUIHeadWarning': app + 'ui/c.ui.head.warning',
-        'cUIInputClear': app + 'ui/c.ui.input.clear',
-        'cUILayer': app + 'ui/c.ui.layer',
+        'cUIAlert': app + 'ui/ui.alert',
+        'cUIAnimation': app + 'ui/ui.animation',
+        'cUICitylist': app + 'ui/ui.citylist',
+        'cUIHeadWarning': app + 'ui/ui.head.warning',
+        'cUIInputClear': app + 'ui/ui.input.clear',
+        'cUILayer': app + 'ui/ui.layer',
 
-        'cUILayerList': app + 'ui/c.ui.layer.list',
+        'cUILayerList': app + 'ui/ui.layer.list',
 
-        'cUILoading': app + 'ui/c.ui.loading',
-        'cUILoadingLayer': app + 'ui/c.ui.loading.layer',
-        'cUIMask': app + 'ui/c.ui.mask',
-        'cUIToast': app + 'ui/c.ui.toast',
-        'cUIWarning': app + 'ui/c.ui.warning',
-        'cUIWarning404': app + 'ui/c.ui.warning404',
-        'cUIHashObserve': app + 'ui/c.ui.hash.observe',
-        'cUIEventListener': app + 'ui/c.ui.event.listener',
-        'cUISwitch': app + 'ui/c.ui.switch',
-        'cUINum': app + 'ui/c.ui.num',
-        'cUITab': app + 'ui/c.ui.tab', //标签插件
-        'cUIImageSlider': app + 'ui/c.ui.imageSlider',
-        'cUISlider': app + 'ui/c.ui.slider',
-        'cUIIdentitycard': app + 'ui/c.ui.identitycard'
+        'cUILoading': app + 'ui/ui.loading',
+        'cUILoadingLayer': app + 'ui/ui.loading.layer',
+        'cUIMask': app + 'ui/ui.mask',
+        'cUIToast': app + 'ui/ui.toast',
+        'cUIWarning': app + 'ui/ui.warning',
+        'cUIWarning404': app + 'ui/ui.warning404',
+        'cUIHashObserve': app + 'ui/ui.hash.observe',
+        'cUIEventListener': app + 'ui/ui.event.listener',
+        'cUISwitch': app + 'ui/ui.switch',
+        'cUINum': app + 'ui/ui.num',
+        'cUITab': app + 'ui/ui.tab', //标签插件
+        'cUIImageSlider': app + 'ui/ui.imageSlider',
+        'cUISlider': app + 'ui/ui.slider',
+        'cUIIdentitycard': app + 'ui/ui.identitycard'
     }
 
 });
 var arrayModule = [];
-require(['cBase', 'cAjax'], function(cBase, cAjax) {
-    // this.alert = new cUIAlert({
-    //     showTitle: true,
-    //     title: '头部',
-    //     message: '内容',
-    //     buttons: [{
-    //         text: '内容',
-    //         click: function () {
-    //             this.hide();
-    //         }
-    //     }]
+require(['cUIMask', 'cUIAlert', 'cUIToast'], function (cUIMask, cUIAlert, cUIToast) {
+    // var mask = new cUIMask({
+    //     classNames: ['opacitymask']
     // });
-    // alert.show()
+
+    // mask.show();
+    var alert = new cUIAlert({
+        showTitle: true,
+        title: '头部',
+        message: '内容',
+        needMask: true,
+        needMaskHide: false,
+        buttons: [{
+            text: '确定',
+            click: function () {
+                this.hide();
+            }
+        }]
+    });
+    alert.show()
 
     // var scroolList = new cUIScrollRadio();
     // scroolList.show();
+
+    // var toast = new cUIToast({
+    //     viewdata: {
+    //     content: '带蒙版，点击蒙版不关闭，3秒关闭',
+    //     },
+    //     // maskToHide: true,
+    //     sleep: 30000000
+    // });
+    // toast.show('带蒙版，点击蒙版不关闭，3秒关闭');
 })
 // })();

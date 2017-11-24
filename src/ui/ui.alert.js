@@ -1,5 +1,5 @@
 ﻿/**
-* @class cUIAlter
+* @class juiAlter
 * @description 提供alter类弹出框
 */
 define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
@@ -18,20 +18,20 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
 
 
     var _config = {
-        prefix: 'cui-'
+        prefix: 'jui-'
     };
 
     options.__propertys__ = function () {
         this.tpl = [
-            '<div class="cui-pop-box">',
+            '<div class="jui-pop-box">',
                 '{{#showTitle}}',
-                    '<div class="cui-hd">',
-                        '<div class="cui-text-center">{{title}}</div>',
+                    '<div class="jui-hd">',
+                        '<div class="jui-text-center">{{title}}</div>',
                     '</div>',
                 '{{/showTitle}}',
-                '<div class="cui-bd">',
-                    '<div class="cui-error-tips">{{message}}</div>',
-                    '<div class="cui-roller-btns"></div>',
+                '<div class="jui-bd">',
+                    '<div class="jui-error-tips">{{message}}</div>',
+                    '<div class="jui-roller-btns"></div>',
                 '</div>',
             '</div>'
         ].join('')
@@ -68,9 +68,6 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
         this.addClass(_config.prefix + 'alert');
         $super($.extend(_attributes, opts));
         this.buildViewData();
-        console.log(this.viewdata)
-
-        console.log()
 
     };
 
@@ -96,7 +93,7 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
     };
     options.loadButtons = function () {
         if (!this.root) this.create();
-        var btnBox = this.root.find('.cui-roller-btns');
+        var btnBox = this.root.find('.jui-roller-btns');
         var btus = this.createButtons();
         btnBox.empty();
         $.each(btus, function (k, v) {
@@ -114,10 +111,10 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
                 v.type = v.type ? v.type : (text == '取消' ? STYLE_CANCEL : STYLE_CONFIRM);
                 switch (v.type) {
                     case STYLE_CANCEL:
-                        cls.push('cui-btns-cancel');
+                        cls.push('jui-btns-cancel');
                         break;
                     case STYLE_CONFIRM:
-                        cls.push('cui-btns-sure');
+                        cls.push('jui-btns-sure');
                         break;
                 };
                 v.click && (click = v.click);
@@ -125,7 +122,7 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
                 text = k;
                 typeof v === 'function' && (click = v);
             }
-            btns[i] = $('<div class="cui-flexbd ' + cls.join(' ') + '">' + text + '</div>');
+            btns[i] = $('<div class="jui-btns ' + cls.join(' ') + '">' + text + '</div>');
             btns[i].addClass(cls.join(' '));
             btns[i].bind('click', $.proxy(click, scope));
             i++;

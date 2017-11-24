@@ -31,7 +31,17 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
         this.windowResizeHander;
         this.setIntervalResource;
         this.setIntervalTotal = 0;
+
+        this._resetDefaultProperty();
     };
+
+    options._resetDefaultProperty = function () {
+        // 是否需要蒙版
+        this.needMask = true;
+
+        // 是否需要点击蒙版删除
+        this.needMaskHide = true;
+    }
 
     /** 构造函数入口 */
     options.initialize = function ($super, opts) {
@@ -50,7 +60,7 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
         });
 
         this.bindEvent();
-        $super(opts);
+        $super($.extend(this, opts));
         this.loadViewData();
     };
 
@@ -84,32 +94,25 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
         });
 
         this.addEvent('onShow', function () {
-            this.mask.show();
+            if (this.needMask ) {
+                this.mask.show();
+            }
             $(window).bind('resize', this.windowResizeHander);
 
-            //解决三星浏览器渲染问题
-            //      this.root.css('visibility', 'hidden');
             this.reposition();
-            //显示以后，连续计算位置
-            this.setIntervalResource = setInterval($.proxy(function () {
-                if (this.setIntervalTotal < 10) {
-                    this.windowResizeHander();
-                } else {
-                    this.setIntervalTotal = 0;
-                    this.root.css('visibility', 'visible');
-                    clearInterval(this.setIntervalResource);
-                }
-                this.setIntervalTotal++;
-            }, this), 1);
             this.setzIndexTop();
+            if (this.needMask && this.needMaskHide) {
+                this.maskToHide();
+            }
         });
-
+        
         this.addEvent('onHide', function () {
             $(window).unbind('resize', this.windowResizeHander);
             clearInterval(this.setIntervalResource);
             this.root.css('visibility', 'visible');
-            this.mask.hide();
-
+            if (this.needMask) {
+                this.mask.hide();
+            }
         });
     };
 

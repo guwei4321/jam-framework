@@ -49,7 +49,12 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
             message: '',
             showTitle: false
         };
+        this._resetDefaultProperty();
     };
+
+    options._resetDefaultProperty = function () {
+       
+    }
 
     options.initialize = function ($super, opts) {
         var allowOptions = {
@@ -65,13 +70,12 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
                     break;
             }
         });
-        this.addClass(_config.prefix + 'alert');
         $super($.extend(_attributes, opts));
         this.buildViewData();
-
     };
 
     options.buildViewData = function () {
+        this.addClass(_config.prefix + 'alert');
         this.viewdata.title = this.title;
         this.viewdata.message = this.message;
         this.viewdata.showTitle = this.showTitle;
@@ -92,7 +96,7 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
         this.loadButtons();
     };
     options.loadButtons = function () {
-        if (!this.root) this.create();
+        // if (!this.root) this.create();
         var btnBox = this.root.find('.jui-roller-btns');
         var btus = this.createButtons();
         btnBox.empty();

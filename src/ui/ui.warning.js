@@ -1,17 +1,17 @@
 ﻿/**
 * @description 警告框
 */
-define(['libs', 'cBase', 'cUILayer', 'cUIMask'], function (libs, cBase, Layer, Mask) {
+define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
 
     var options = {};
 
     var _config = {
-        prefix: 'cui-'
+        prefix: 'jui-'
     };
 
-    var _mask = new Mask({
-        classNames: [_config.prefix + 'warning-mask']
-    });
+    // var _mask = new Mask({
+    //     classNames: [_config.prefix + 'warning-mask']
+    // });
 
     var _calback = function () { };
 
@@ -33,21 +33,21 @@ define(['libs', 'cBase', 'cUILayer', 'cUIMask'], function (libs, cBase, Layer, M
             this.callback && this.callback();
         }, this));
 
-        _mask.create();
+        // _mask.create();
 
-        _mask.root.bind('click', $.proxy(function () {
-            this.callback && this.callback();
-        }, this));
+        // _mask.root.bind('click', $.proxy(function () {
+        //     this.callback && this.callback();
+        // }, this));
     };
 
     _attributes.onShow = function () {
         //this.mask.show();
-        _mask.show();
+        // _mask.show();
     };
 
     _attributes.onHide = function () {
         //this.mask.hide();
-        _mask.hide();
+        // _mask.hide();
     };
 
     _attributes.setTitle = function (title, callback) {

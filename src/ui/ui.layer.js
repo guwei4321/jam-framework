@@ -7,26 +7,21 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
     var options = {};
 
     var _config = {
-        prefix: 'cui-'
+        prefix: 'jui-'
     };
 
-    //  var _mask = new Mask({
-    //    classNames: [_config.prefix + 'opacitymask']
-    //  });
-
     /** 相关属性 */
-    options.__propertys__ = function () {
+    options.__propertys__ = function (opts) {
         this.tpl = [
             '<div class="' + _config.prefix + 'layer-padding">',
             '<div class="' + _config.prefix + 'layer-content">{{content}}</div>',
             '</div>'
         ].join('');
         this.content = '';
+        this.sleep = -1;
         this.contentDom;
-        this.mask = new Mask({
-            classNames: [_config.prefix + 'opacitymask']
-        });
-        this.addClass(_config.prefix + 'layer');
+        
+        
         this.viewdata = {};
         this.windowResizeHander;
         this.setIntervalResource;
@@ -45,9 +40,16 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
 
     /** 构造函数入口 */
     options.initialize = function ($super, opts) {
+        
         var allowConfig = {
             content: true
         };
+        console.log(opts)
+        console.log(this )
+        this.mask = new Mask({
+            rootBox: opts.rootBox || $('body'),
+            disableScroll: opts.disableScroll
+        });
         this.setOption(function (k, v) {
             switch (true) {
                 case allowConfig[k]:
@@ -58,8 +60,7 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
                     break;
             }
         });
-
-        this.bindEvent();
+        this.bindEvent(opts);
         $super($.extend(this, opts));
         this.loadViewData();
     };
@@ -86,15 +87,16 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
     * @method bindEvent
     * @description 绑定事件
     */
-    options.bindEvent = function () {
-
+    options.bindEvent = function (opts) {
+        
         this.addEvent('onCreate', function () {
             this.windowResizeHander = $.proxy(this.reposition, this);
             this.contentDom = this.root.find('.' + _config.prefix + 'layer-content');
         });
-
+       
         this.addEvent('onShow', function () {
             if (this.needMask ) {
+                
                 this.mask.show();
             }
             $(window).bind('resize', this.windowResizeHander);
@@ -104,6 +106,13 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
             if (this.needMask && this.needMaskHide) {
                 this.maskToHide();
             }
+            if (opts.sleep > 0) {
+                setTimeout($.proxy(function () {
+                    this.hide();
+                    this.trigger('onHide');
+                }, this), opts.sleep * 1000 );
+
+            }
         });
         
         this.addEvent('onHide', function () {
@@ -111,6 +120,7 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
             clearInterval(this.setIntervalResource);
             this.root.css('visibility', 'visible');
             if (this.needMask) {
+                this.mask.root.off('click');
                 this.mask.hide();
             }
         });
@@ -125,7 +135,7 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
     };
 
     /**
-    * @method createHtml
+    * @method maskToHide
     * @param fn {function}    回调函数
     * @description 点击蒙版关闭控件时候要触发的事件
     */

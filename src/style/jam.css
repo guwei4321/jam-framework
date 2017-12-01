@@ -313,6 +313,16 @@ ol,ul {
     opacity: .6
 }
 
+.jui-alert {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 2100;
+    padding: 5px;
+    color: #eee;
+    border-radius: 10px;
+}
+
 .jui-pop-box {
     position: relative;
     text-align: initial;
@@ -322,6 +332,7 @@ ol,ul {
     padding: 20px;
     font-size: 14px;
     white-space: normal;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.1)
 }
 
 .jui-hd {
@@ -353,6 +364,7 @@ ol,ul {
 .jui-roller-btns .jui-btns {
     display: inline-block;
     height: 30px;
+    margin: 0 5px;
     line-height: 30px;
     padding: 0 10px;
     border-radius: 2px;
@@ -363,4 +375,33 @@ ol,ul {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
+}
+
+.jui-loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.jui-loading .jui-layer-padding {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.jui-loading-content {
+    width: 64px;
+    height: 64px;
+    background: url(../images/loading.gif)  no-repeat;
+}
+
+.jui-toast {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #396;
+    color: #fff;
+    text-align: center;
 }

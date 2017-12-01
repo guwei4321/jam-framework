@@ -6,8 +6,9 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
     var options = {};
 
     var _config = {
-        prefix: 'cui-',
-        sleep: 2
+        prefix: 'jui-',
+        sleep: 2,
+        rootBox: $('body')
     };
 
     var _handler = null;
@@ -49,6 +50,8 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
 
     var _show = function (title, sleep, callback, clickToHide) {
         var scope = this;
+        this.addClass([_config.prefix + 'toast']);
+        
         this.setContent(title);
 
         this.reposition = _superReposition;
@@ -87,19 +90,31 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
         };
     };
 
+    var _attributes = {
+        title: ''
+    };
+
+    _attributes['class'] = _config.prefix + 'toast';
+
+    _attributes.onCreate = function () { };
+
+    _attributes.onShow = function (callback) {
+        this.setContent(_attributes.title);
+        this.reposition();
+    };
+
     options.__propertys__ = function () {
 
-        _showHandler = this.show;
-        _hideHandler = this.hide;
-        _superReposition = this.reposition;
+        // _showHandler = this.show;
+        // _hideHandler = this.hide;
+        // _superReposition = this.reposition;
 
-        this.show = _show;
-        this.hide = _hide;
+        // this.show = _show;
+        // this.hide = _hide;
     };
 
     options.initialize = function ($super, options) {
-        this.addClass([_config.prefix + 'toast']);
-        $super(options);
+        $super($.extend(_attributes, options));
     };
 
     options.setContent = function (content) {

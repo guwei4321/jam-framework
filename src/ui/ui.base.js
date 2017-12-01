@@ -227,15 +227,18 @@ define([], function () {
     }
 
     /**
-    * @method preventScrool
+    * @method preventkeyDownScroll
     * @description 键盘上下左右滚动
     */
-    base.preventScrool = function (e) {
+    base.preventkeyDownScroll = function (e) {
+        e = e || window.event;
         var keys = [37, 38, 39, 40];
+        console.log(e)
         for (var i = keys.length; i--;) {
             if (e.keyCode === keys[i]) {
-                e.preventDefault();
-                return;
+                if (e.preventDefault)
+                    e.preventDefault();
+                e.returnValue = false;
             }
         }
     };

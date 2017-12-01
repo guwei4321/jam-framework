@@ -111,37 +111,74 @@ require.config({
 
 });
 var arrayModule = [];
-require(['cUIMask', 'cUIAlert', 'cUIToast'], function (cUIMask, cUIAlert, cUIToast) {
+require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading'], function (cUIMask, cUIAlert, cUIToast, cUIWarning, cUILoading) {
     // var mask = new cUIMask({
     //     classNames: ['opacitymask']
     // });
 
     // mask.show();
+
     var alert = new cUIAlert({
         showTitle: true,
         title: '头部',
         message: '内容',
         needMask: true,
         needMaskHide: false,
-        buttons: [{
-            text: '确定',
-            click: function () {
-                this.hide();
+        buttons: [
+            {
+                text: '确定',
+                click: function () {
+                    this.hide();
+                }
+            },
+            {
+                type: 'cancel',
+                text: '取消',
+                click: function () {
+                    this.hide();
+                }
             }
-        }]
+        ]
     });
-    alert.show()
+    // alert.show()
 
+    var loading = new cUILoading({
+        rootBox : $('#loading-wrap')
+    })
+    // loading.show();
+
+    // var pp = new cUIWarning({
+    //     warningtitle: 'hi'
+    // });
+    // pp.show();
+
+    // var warHead = new cUIWarning({
+    //     warningtitle : '123',
+    //     needMask: true
+    // })
+    // warHead.show();
     // var scroolList = new cUIScrollRadio();
     // scroolList.show();
-
-    // var toast = new cUIToast({
-    //     viewdata: {
-    //     content: '带蒙版，点击蒙版不关闭，3秒关闭',
-    //     },
-    //     // maskToHide: true,
-    //     sleep: 30000000
+    var toast = new cUIToast({
+        title: '带蒙版，点击蒙版不关闭，3秒关闭',
+        disableScroll: true,
+        sleep: 3,
+        needMaskHide: false,
+    });
+    $('#button0').on('click', function(){
+        toast.show(function () {
+            console.log(11312)
+        });
+    })
+    $('#button1').on('click', function () {
+        loading.show();
+    })
+    $('#button2').on('click', function () {
+        alert.show();
+    })
+    
+    // toast.hide(function () {
+    //     console.log(11312)
     // });
-    // toast.show('带蒙版，点击蒙版不关闭，3秒关闭');
 })
 // })();

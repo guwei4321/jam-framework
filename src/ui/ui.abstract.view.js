@@ -58,7 +58,7 @@ define(['libs', 'cBase', 'cUIBase'], function (libs, cBase, uiBase) {
         this.id = uiBase.getCreateId();
 
         /** 默认class */
-        this.classNames = [uiBase.config.prefix + 'view'];
+        this.classNames = [];
 
         /** 根节点 */
         this.root;
@@ -294,7 +294,7 @@ define(['libs', 'cBase', 'cUIBase'], function (libs, cBase, uiBase) {
     * @description 触发事件
     */
     options.create = function () {
-        if (!this.isCreate && this.status !== STATE_ONCREATE) {
+        if (this.isCreate === false && this.status === STATE_NOTCREATE) {
             this.rootBox = this.rootBox || $('body');
             this.root = this.createRoot();
             this.root.hide();

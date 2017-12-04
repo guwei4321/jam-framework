@@ -123,7 +123,8 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading'], functio
         title: '头部',
         message: '内容',
         needMask: true,
-        needMaskHide: false,
+        needMaskHide: true,
+        disableScroll: false,
         buttons: [
             {
                 text: '确定',
@@ -134,6 +135,30 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading'], functio
             {
                 type: 'cancel',
                 text: '取消',
+                click: function () {
+                    this.hide();
+                }
+            }
+        ]
+    });
+    var alert1 = new cUIAlert({
+        showTitle: true,
+        title: '头部1',
+        message: '内容1',
+        needMask: true,
+        needMaskHide: true,
+        disableScroll: false,
+        prefix: 'xxx-',
+        buttons: [
+            {
+                text: '确定1',
+                click: function () {
+                    this.hide();
+                }
+            },
+            {
+                type: 'cancel',
+                text: '取1消',
                 click: function () {
                     this.hide();
                 }
@@ -164,14 +189,21 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading'], functio
         disableScroll: true,
         sleep: 3,
         needMaskHide: false,
+        // prefix: 'xxxx-',
+        delayCallback: function(){
+            console.log('关闭')
+        }
     });
     $('#button0').on('click', function(){
-        toast.show(function () {
+        loading.show(function () {
             console.log(11312)
         });
+        // toast.hide(function (){
+        //     console.log(12312)
+        // })
     })
     $('#button1').on('click', function () {
-        loading.show();
+        toast.show();
     })
     $('#button2').on('click', function () {
         alert.show();

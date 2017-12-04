@@ -4,30 +4,19 @@
 define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, cUIBase, AbstractView) {
 
     var options = {};
-    var isRootBody = false;
-    var disableScroll = false;
-
-    var _config = {
-        prefix: 'jui-'
-    };
 
     /** 相关属性 */
     options.__propertys__ = function () {
-        
-    };
+        this.isRootBody = true;  // 禁止滚动
+        this.disableScroll = false;  // 指定父元素
+        this.prefix = 'jui-';
 
+    }
     /** 构造函数入口 */
     options.initialize = function ($super, opts) {
-        var allowOptions = {
-            disableScroll: opts.disableScroll || disableScroll 
-        }
-        disableScroll = opts.disableScroll;
+        this.isRootBody = this.getRootBody(opts.rootBox);
         this.bindEvent(opts);
-        if (this.getRootBody(opts.rootBox)){
-            isRootBody = true;
-        }
-        this.addClass(_config.prefix + 'mask');
-        $super($.extend(allowOptions, opts));
+        $super($.extend(this,opts));
     };
 
     /**
@@ -35,13 +24,13 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
     * @description 为各个事件点注册事件
     */
     options.bindEvent = function (opts) {
-        // var isRootBody =  this.isRootBody = this.getRootBody(opts.rootBox);
         this.addEvent('onCreate', function () {
             this.setRootStyle(opts);
+            this.addClass(this.prefix + 'mask');
             this.onResize = $.proxy(function () {
-                this.resize(isRootBody);
+                this.resize();
             }, this);
-            if (this.isRootBody && disableScroll) {
+            if (this.isRootBody && this.disableScroll) {
                
                 this.prevent = $.proxy(function() {
                     cUIBase.preventDefault();
@@ -56,7 +45,7 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
 
         this.addEvent('onShow', function () {
             this.setzIndexTop(-1);
-            if (this.isRootBody && disableScroll) {
+            if (this.isRootBody && this.disableScroll) {
                 $(window).bind('resize', this.onResize);
                 $(window).bind('keydown', this.preventkeyDownScroll);
                 $(window).bind('mousewheel', this.prevent );
@@ -67,7 +56,7 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
         });
 
         this.addEvent('onHide', function () {
-            if (this.isRootBody && disableScroll) {
+            if (this.isRootBody && this.disableScroll) {
                 $(window).unbind('resize', this.onResize);
                 $(window).unbind('keydown', this.preventkeyDownScroll);
                 $(window).unbind('mousewheel', this.prevent);
@@ -81,11 +70,11 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
     * @description 判断根节点是否是body
     */
     options.getRootBody = function(el){
-        if (!el) return false;
-        if (el.attr('tagName').toLowerCase() === 'body' ) {
-            isRootBody = true;
+        if (!el) return true;
+        if (el.attr('tagName').toLowerCase() !== 'body' ) {
+            return false;
         } else {
-            isRootBody = false;
+            return true;
         }
     }
 
@@ -113,9 +102,9 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
     * @method resize
     * @description 尺寸改变时候要重新计算位置
     */
-    options.resize = function (isRootBody) {
+    options.resize = function () {
         var pos  = cUIBase.getPageScrollPos();
-        if (isRootBody) {
+        if (this.isRootBody) {
             this.root.css({
                 width: pos.width + 'px',
                 height: pos.pageHeight + 'px'

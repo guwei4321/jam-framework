@@ -6,47 +6,24 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
 
     var options = {};
 
-    var _config = {
-        prefix: 'jui-'
-    };
-
-    /** 用于abstractView执行的对象 */
-    
-
-    // _attributes.onCreate = function () { };
-
-    // _attributes.onShow = function () {
-        
-    // };
-
     /** 相关属性 */
     options.__propertys__ = function () {
-        this.needMaskHide = false;
-        this.contentDom;
-        this.loadHtml = '';
+        this.needMaskHide = false; // 是否需要遮罩层
+        this.loadHtml = '<div class="' + this.prefix+'loading-content"></div>'; // loading内容
+        this['class'] = this.prefix + 'loading';
+
     };
 
     /** 构造函数入口 */
     options.initialize = function ($super, opts) {
-        var _attributes = {};
         this.rootBox = this.rootBox || $('body');
-        _attributes['class'] = _config.prefix + 'loading';
-        $super($.extend(_attributes, opts));
+        $super($.extend(this, opts));
     };
 
     options.onShow = function(){
-        this.contentDom.html('<div class="jui-loading-content"></div>');
+        this.contentDom.html(this.loadHtml);
         this.reposition();
     }
-
-    /**
-    * @method setHtml
-    * @param html {String}    内容体
-    * @description 设置loading的内容
-    */
-    options.setHtml = function (html) {
-        this.loadHtml = html;
-    };
 
     return new cBase.Class(Layer, options);
 

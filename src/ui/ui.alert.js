@@ -8,35 +8,14 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
     var STYLE_CONFIRM = 'confirm';
     var STYLE_CANCEL = 'cancel';
 
-    var _attributes = {};
-    _attributes.onCreate = function () {
-        this.loadButtons();
-    };
-
     var options = {};
 
-
-
-    var _config = {
-        prefix: 'jui-'
-    };
-
     options.__propertys__ = function () {
-        this.tpl = [
-            '<div class="jui-pop-box">',
-                '{{#showTitle}}',
-                    '<div class="jui-hd">',
-                        '<div class="jui-text-center">{{title}}</div>',
-                    '</div>',
-                '{{/showTitle}}',
-                '<div class="jui-bd">',
-                    '<div class="jui-error-tips">{{message}}</div>',
-                    '<div class="jui-roller-btns"></div>',
-                '</div>',
-            '</div>'
-        ].join('')
+        this.tpl = ''
         this.title = '';
         this.message = '';
+        this.prefix = 'jui-';
+        this['class'] = this.prefix + 'alert';
         this.buttons = [{
             text: '确定',
             type: 'confirm',
@@ -49,14 +28,26 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
             message: '',
             showTitle: false
         };
-        this._resetDefaultProperty();
     };
 
     options._resetDefaultProperty = function () {
-       
+        this.tpl = [
+            '<div class="'+this.prefix+'pop-box">',
+            '{{#showTitle}}',
+            '<div class="'+this.prefix+'hd">',
+            '<div class="'+this.prefix+'text-center">{{title}}</div>',
+            '</div>',
+            '{{/showTitle}}',
+            '<div class="'+this.prefix+'bd">',
+            '<div class="'+this.prefix+'error-tips">{{message}}</div>',
+            '<div class="'+this.prefix+'roller-btns"></div>',
+            '</div>',
+            '</div>'
+        ].join('')
     }
 
     options.initialize = function ($super, opts) {
+        this._resetDefaultProperty();
         var allowOptions = {
             title: true,
             message: true,
@@ -70,12 +61,15 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
                     break;
             }
         });
-        $super($.extend(_attributes, opts));
+        $super($.extend(this, opts));
         this.buildViewData();
     };
 
+    options.onCreate = function () {
+        this.loadButtons();
+    };
+
     options.buildViewData = function () {
-        this.addClass(_config.prefix + 'alert');
         this.viewdata.title = this.title;
         this.viewdata.message = this.message;
         this.viewdata.showTitle = this.showTitle;

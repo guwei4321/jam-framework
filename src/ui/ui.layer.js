@@ -6,58 +6,54 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
 
     var options = {};
 
-    var _config = {
-        prefix: 'jui-'
-    };
 
     /** 相关属性 */
     options.__propertys__ = function (opts) {
-        this.tpl = [
-            '<div class="' + _config.prefix + 'layer-padding">',
-            '<div class="' + _config.prefix + 'layer-content">{{content}}</div>',
-            '</div>'
-        ].join('');
+        this.tpl = '';
         this.content = '';
         this.sleep = -1;
         this.contentDom;
+        this.prefix = 'jui-';
         
         
         this.viewdata = {};
         this.windowResizeHander;
         this.setIntervalResource;
         this.setIntervalTotal = 0;
-
-        this._resetDefaultProperty();
     };
 
     options._resetDefaultProperty = function () {
         // 是否需要蒙版
         this.needMask = true;
-
+        this.tpl = [
+            '<div class="' + this.prefix + 'layer-padding">',
+            '<div class="' + this.prefix + 'layer-content">{{content}}</div>',
+            '</div>'
+        ].join('');
         // 是否需要点击蒙版删除
         this.needMaskHide = true;
     }
 
     /** 构造函数入口 */
     options.initialize = function ($super, opts) {
-        
+        this._resetDefaultProperty();
         var allowConfig = {
             content: true
         };
-        console.log(opts)
-        console.log(this )
         this.mask = new Mask({
             rootBox: opts.rootBox || $('body'),
-            disableScroll: opts.disableScroll
+            disableScroll: opts.disableScroll,
+            prefix: opts.prefix
         });
         this.setOption(function (k, v) {
             switch (true) {
                 case allowConfig[k]:
-                    this[k] = v;
-                    break;
+                console.log(k)
+                this[k] = v;
+                break;
                 case 'class' === k:
-                    this.addClass(v);
-                    break;
+                this.addClass(v);
+                break;
             }
         });
         this.bindEvent(opts);
@@ -88,15 +84,13 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
     * @description 绑定事件
     */
     options.bindEvent = function (opts) {
-        
         this.addEvent('onCreate', function () {
             this.windowResizeHander = $.proxy(this.reposition, this);
-            this.contentDom = this.root.find('.' + _config.prefix + 'layer-content');
+            this.contentDom = this.root.find('.' + this.prefix + 'layer-content');
         });
        
         this.addEvent('onShow', function () {
             if (this.needMask ) {
-                
                 this.mask.show();
             }
             $(window).bind('resize', this.windowResizeHander);
@@ -109,6 +103,7 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
             if (opts.sleep > 0) {
                 setTimeout($.proxy(function () {
                     this.hide();
+                    opts.delayCallback && opts.delayCallback();
                     this.trigger('onHide');
                 }, this), opts.sleep * 1000 );
 
@@ -149,7 +144,7 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
 
         this.mask.addEvent('onHide', function () {
             this.root.off('click');
-            this.root.remove();
+            this.root.hide();
         });
 
     };

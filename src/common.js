@@ -111,7 +111,40 @@ require.config({
 
 });
 var arrayModule = [];
-require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading'], function (cUIMask, cUIAlert, cUIToast, cUIWarning, cUILoading) {
+require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading', 'cUIImageSlider'], function (cUIMask, cUIAlert, cUIToast, cUIWarning, cUILoading, UIImageSlider) {
+    console.log($('.demo02'))
+    var data = [
+        { id: 1, src: '../webresource/style/imgs/1.jpg', href: './res/img/1.jpg' },
+        { id: 2, src: '../webresource/style/imgs/2.jpg', href: './res/img/2.jpg' },
+        { id: 3, src: '../webresource/style/imgs/3.jpg', href: './res/img/3.jpg' },
+        { id: 4, src: '../webresource/style/imgs/4.jpg', href: './res/img/4.jpg' }
+    ];
+    var imgSlider02 = new UIImageSlider({
+        images: data,
+        datamodel: {
+            data: data,
+            itemFn: function (item) {
+                return '<img data-src="' + item.src + '" src="' + item.src + '">';
+            }
+        },
+        createNav: function () {
+            if (this.sliderNav) return;
+            var nav = '<div class="cui-navContainer cui-slide-nav-new" style="background: #f2f2f2; color: rgb(20, 145, 197); position: absolute;  bottom: 0;">';
+            for (var i = 0; i < this.itemNum; i++) {
+                nav += '<span class="cui-slide-nav-item" data-index="' + i + '"></span>';
+            }
+            nav += '</div>';
+            this.sliderNav = $(nav);
+            this.sliderNav.find('span').width(this.wrapper.width() / this.itemNum - 1);
+            this.$el.append(this.sliderNav);
+            this.setzIndexTop(this.sliderNav);
+            this._setNavIndex(this.datamodel.index);
+        },
+        displayNum: 1,
+        container: $('.demo02')
+    });
+    imgSlider02.play();
+
     // var mask = new cUIMask({
     //     classNames: ['opacitymask']
     // });
@@ -168,7 +201,8 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading'], functio
     // alert.show()
 
     var loading = new cUILoading({
-        rootBox : $('#loading-wrap')
+        rootBox : $('#loading-wrap'),
+        backgroundColor: 'rgba(0, 255, 153, .6)'
     })
     // loading.show();
 

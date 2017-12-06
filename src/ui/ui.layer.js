@@ -14,8 +14,8 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
         this.sleep = -1;
         this.contentDom;
         this.prefix = 'jui-';
-        
-        
+
+
         this.viewdata = {};
         this.windowResizeHander;
         this.setIntervalResource;
@@ -42,18 +42,18 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
         };
         this.mask = new Mask({
             rootBox: opts.rootBox || $('body'),
-            disableScroll: opts.disableScroll,
-            prefix: opts.prefix
+            disableScroll: opts.disableScroll || false,
+            prefix: opts.prefix,
+            backgroundColor: opts.backgroundColor || '#000'
         });
         this.setOption(function (k, v) {
             switch (true) {
                 case allowConfig[k]:
-                console.log(k)
-                this[k] = v;
-                break;
+                    this[k] = v;
+                    break;
                 case 'class' === k:
-                this.addClass(v);
-                break;
+                    this.addClass(v);
+                    break;
             }
         });
         this.bindEvent(opts);
@@ -88,9 +88,9 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
             this.windowResizeHander = $.proxy(this.reposition, this);
             this.contentDom = this.root.find('.' + this.prefix + 'layer-content');
         });
-       
+
         this.addEvent('onShow', function () {
-            if (this.needMask ) {
+            if (this.needMask) {
                 this.mask.show();
             }
             $(window).bind('resize', this.windowResizeHander);
@@ -105,11 +105,11 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
                     this.hide();
                     opts.delayCallback && opts.delayCallback();
                     this.trigger('onHide');
-                }, this), opts.sleep * 1000 );
+                }, this), opts.sleep * 1000);
 
             }
         });
-        
+
         this.addEvent('onHide', function () {
             $(window).unbind('resize', this.windowResizeHander);
             clearInterval(this.setIntervalResource);

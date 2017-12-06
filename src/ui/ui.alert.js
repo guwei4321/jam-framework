@@ -48,19 +48,6 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
 
     options.initialize = function ($super, opts) {
         this._resetDefaultProperty();
-        var allowOptions = {
-            title: true,
-            message: true,
-            buttons: true,
-            showTitle: true
-        };
-        this.setOption(function (k, v) {
-            switch (true) {
-                case allowOptions[k]:
-                    this[k] = v;
-                    break;
-            }
-        });
         $super($.extend(this, opts));
         this.buildViewData();
     };

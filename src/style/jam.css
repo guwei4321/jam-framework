@@ -309,8 +309,7 @@ ol,ul {
 }
 
 .jui-mask {
-    background-color: #000;
-    opacity: .6
+    background-color: rgba(0,0,0,.6);
 }
 
 .jui-alert {

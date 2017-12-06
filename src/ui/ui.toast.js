@@ -7,6 +7,7 @@ define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
 
     options.__propertys__ = function () {
         this['class'] = this.prefix + 'toast';
+        this.title = '您好！'
     };
 
     options.initialize = function ($super, options) {

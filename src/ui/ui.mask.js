@@ -9,6 +9,7 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
     options.__propertys__ = function () {
         this.isRootBody = true;  // 禁止滚动
         this.disableScroll = false;  // 指定父元素
+        this.backgroundColor = '#000';
         this.prefix = 'jui-';
 
     }
@@ -82,11 +83,13 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
     * @method setRootStyle
     * @description 设置根节点样式
     */
-    options.setRootStyle = function () {
+    options.setRootStyle = function (opts) {
+        console.log(opts)
         this.root.css({
             position: 'absolute',
             left: '0px',
-            top: '0px'
+            top: '0px',
+            backgroundColor: opts.backgroundColor || '#000'
         });
     };
 

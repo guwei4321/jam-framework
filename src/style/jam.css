@@ -404,3 +404,73 @@ ol,ul {
     color: #fff;
     text-align: center;
 }
+
+
+.slider_wrap {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    margin: 48px auto;
+    overflow: hidden
+}
+
+.slider {
+    position: relative;
+    width: 3000px;
+    overflow: hidden
+}
+
+.slider figure {
+    float: left;
+    width: 300px;
+    text-align: center;
+    overflow: hidden
+}
+
+.slider figcaption {
+    letter-spacing: 1px;
+    line-height: 60px
+}
+
+.slider_bar {
+    position: relative;
+    height: 30px;
+    margin-top: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.slider_prev,.slider_next {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px
+}
+
+.slider_prev {
+    left: 5px
+}
+
+.slider_next {
+    right: 5px
+}
+
+.slider_prev:before,.slider_next:before {
+    position: absolute;
+    content: "";
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent
+}
+
+.slider_prev:before {
+    left: 7px;
+    border-right: 12px solid #fff
+}
+
+.slider_next:before {
+    right: 7px;
+    border-left: 12px solid #fff
+}

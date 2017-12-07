@@ -114,13 +114,15 @@ var arrayModule = [];
 require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading', 'cUIImageSlider'], function (cUIMask, cUIAlert, cUIToast, cUIWarning, cUILoading, UIImageSlider) {
     console.log($('.demo02'))
     var data = [
-        { id: 1, src: '../webresource/style/imgs/1.jpg', href: './res/img/1.jpg' },
-        { id: 2, src: '../webresource/style/imgs/2.jpg', href: './res/img/2.jpg' },
-        { id: 3, src: '../webresource/style/imgs/3.jpg', href: './res/img/3.jpg' },
-        { id: 4, src: '../webresource/style/imgs/4.jpg', href: './res/img/4.jpg' }
+        { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },
+        { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },
+        { id: 3, src: 'imagesDEMO/slider-3.jpg', href: './res/img/3.jpg' },
+        { id: 4, src: 'imagesDEMO/slider-4.jpg', href: './res/img/4.jpg' }
     ];
     var imgSlider02 = new UIImageSlider({
         images: data,
+        autoPlay: true,
+        loop: true,
         datamodel: {
             data: data,
             itemFn: function (item) {

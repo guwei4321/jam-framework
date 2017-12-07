@@ -196,7 +196,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }
         },
         //切换至上一张
-         pre: function () {
+        pre: function () {
             if (this._changing) {
                 return;
             }
@@ -226,7 +226,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this.goto(this.index);
         },
         // 直接按照默认方向跳转至指定索引图片
-         goto: function (index) {
+        goto: function (index) {
             this.index = index;
             this._changeImage();
         },
@@ -259,9 +259,9 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         //创建HTML
          _createHTML: function () {
             return ["<div class=\"cui-sliderContainer\" style=\"width:100%;position:relative;\">",
-                "<div class=\"cui-imageContainer\" style=\"width:100%;\">",
+                "<div class=\"slider_wrap\" style=\"width:100%;height:100%;\">",
                 "</div>",
-                "<div class=\"cui-navContainer\" style=\"color:#1491c5;position:absolute;\"></div>",
+                "<div class=\"slider_bar\" style=\"color:#1491c5;position:absolute;\"></div>",
                 "<div class=\"cui-imageLoader\">",
                 "</div>"].join("");
         },
@@ -280,8 +280,8 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._rootNode = $(this._createHTML());
             this._containerNode.html(this._rootNode);
             //   console.log(this._containerNode);
-            this._imageNode = this._rootNode.find(".cui-imageContainer");
-            this._navNode = this._rootNode.find(".cui-navContainer");
+            this._imageNode = this._rootNode.find(".slider_wrap");
+            this._navNode = this._rootNode.find(".slider_bar");
             if (!this.showNav) {
                 this._navNode.css("display", "none");
             }
@@ -515,13 +515,8 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         },
         //根据屏幕宽度，等比例缩放显示高度和宽度
          _setSize: function (height, width) {
-            this._size.width = Math.ceil($(document.body).width());
-            this._size.height = Math.ceil(height * (this._size.width / width));
-
-            if (this._size.height < 100) {
-                this._size.height = 100;
-                this._size.width = width * (this._size.height / height);
-            }
+             this._size.width = Math.ceil(this.container.width());
+             this._size.height = Math.ceil(this.container.height());
 
             this._rootNode.css("width", this._size.width).css("height", this._size.height);
             this._imageNode.find("div").find("img").css("width", this._size.width).css("height", this._size.height);
@@ -617,9 +612,8 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
                 this._imageNode.append(this._loadingNode);
                 this.firstLoad = false;
             }
-        }
-
-        , _setLoadingPos: function () {
+        },
+        _setLoadingPos: function () {
             this._loadingNode.css("position", "absolute").css("height", this._size.height).css("width", this._size.width);
             if (this._size.height) {
                 var top = (this._size.height - 70) / 2;
@@ -651,7 +645,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         _createImageHtml: function (src, alt) {
             return "<div class=\"image-node slider-imageContainerNode\"><img style=\"width:"
                 + this._size.width + "px;height:" + this._size.height + "px\" src=\"" +
-                src + ",\" alt=\"" + (alt ? alt : "") + "\"></div>"
+                src + "\" alt=\"" + (alt ? alt : "") + "\"></div>"
         }
         //指定某个控件在容器中居中
 

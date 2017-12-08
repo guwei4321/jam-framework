@@ -432,6 +432,16 @@ ol,ul {
     line-height: 60px
 }
 
+.slider-loading {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 50%;
+    top: 50%;
+    margin: -24px 0 0 -24px;
+    background: url(../images/slider-loading.gif) no-repeat;
+}
+
 .slider_bar {
     position: relative;
     height: 30px;

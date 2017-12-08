@@ -258,20 +258,20 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         },
         //创建HTML
          _createHTML: function () {
-            return ["<div class=\"cui-sliderContainer\" style=\"width:100%;position:relative;\">",
-                "<div class=\"slider_wrap\" style=\"width:100%;height:100%;\">",
-                "</div>",
-                "<div class=\"slider_bar\" style=\"color:#1491c5;position:absolute;\"></div>",
-                "<div class=\"cui-imageLoader\">",
-                "</div>"].join("");
+            return ['<div class="cui-sliderContainer" style="width:100%;position:relative;">',
+                '<div class="slider_wrap" style="width:100%;height:100%;">',
+                '</div>',
+                '<div class="slider_bar" style="color:#1491c5;position:absolute;"></div>',
+                '<div class="cui-imageLoader">',
+                '</div>'].join("");
         },
         //创建导航
          _createNav: function () {
             var navhtml = [];
             for (var i = 0; i < this._imageCount; i++) {
                 var current = (i == this.index ? "cui-slide-nav-item-current" : "");
-                navhtml.push("<span class=\"cui-slide-nav-item " + current + "\"></span>")
-                //navhtml.push("<span data-index=\"" + i + "\" style=\"padding-left:10px\"> " + current + "</span>");
+                navhtml.push('<span class="cui-slide-nav-item ' + current + '"></span>')
+                //navhtml.push("<span data-index="" + i + "" style="padding-left:10px"> " + current + "</span>");
             }
             this._navNode.empty().html(navhtml.join(" "));
         },
@@ -596,10 +596,9 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         _createLoading: function () {
             if (this.firstLoad) {
                 this._loadingNode = $(this._createImageHtml(this.loadImageUrl));
-                var loading = ["<div class=\"cui-breaking-load\">",
-                    "<div class=\"cui-i cui-m-logo\">",
-                    "</div> <div class=\"cui-i cui-w-loading\">",
-                    "</div></div>"];
+                var loading = ['<div class="cui-breaking-load">',
+                    '<div class="slider-loading">',
+                    '</div></div>'];
 
                 //第一次不要显示loading
                 this._loadingNode.html(loading.join(" ")).hide();
@@ -643,9 +642,9 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }
         },
         _createImageHtml: function (src, alt) {
-            return "<div class=\"image-node slider-imageContainerNode\"><img style=\"width:"
-                + this._size.width + "px;height:" + this._size.height + "px\" src=\"" +
-                src + "\" alt=\"" + (alt ? alt : "") + "\"></div>"
+            return '<div class="image-node slider-imageContainerNode"><img style="width:'
+                + this._size.width + 'px;height:' + this._size.height + 'px" src="' +
+                src + '" alt="' + (alt ? alt : "") + '"></div>'
         }
         //指定某个控件在容器中居中
 

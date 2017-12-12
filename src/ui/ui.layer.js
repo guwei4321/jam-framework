@@ -44,7 +44,7 @@ define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, A
             rootBox: opts.rootBox || $('body'),
             disableScroll: opts.disableScroll || false,
             prefix: opts.prefix,
-            backgroundColor: opts.backgroundColor || '#000'
+            backgroundColor: opts.backgroundColor || 'rgba(0,0,0,.7)'
         });
         this.setOption(function (k, v) {
             switch (true) {

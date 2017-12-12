@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/jam.css">
     <style>
+
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #fff;
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 45px
+        }
+
+        .table th {
+            text-align: left;
+            border: 1px solid #e5e5e5;
+            background-color: #f2f2f2;
+            padding: 10px
+        }
+
+        .table th:first-child {
+            padding-left: 10px
+        }
+
+        .table td {
+            border: 1px solid #e5e5e5;
+            padding: 10px
+        }
+
         button {
                 margin : 20px;
                 line-height: 30px;
@@ -17,24 +41,68 @@
                 background: #38f;
                 border-color: #38f;
         }
+        .wrap {
+            padding: 20px;
+        }
+        .wrap h2 {
+            margin: 30px 0;
+            font-size: 36px;
+        }
+        .wrap h3 {
+            margin: 20px 0;
+            font-size: 30px;
+        }
+        .wrap p {
+            margin: 10px 0;
+        }
         .demo02 {
             height: 202px;
             width: 360px;
+            margin: 0 auto;
         }
     </style>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 </head>
 <body>
 <div style="height:1900px">
+    <div class="wrap">
+        <section>
+            <h2>Slider</h2>
+            <p>Slider是图片滚动组件</p>
+            <h3>API</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>参数</th>
+                        <th>说明</th>
+                        <th>类型</th>
+                        <th>默认值</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+        </section>
+    </div>
+    
     <div class="demo02"></div>
     <div id="loading-wrap" style="position:relative;width: 600px;height:600px;background-color: #f99;">
 
     </div>
+    <input disabled class="input-text" type="text" placeholder="disabled">
+    <input class="input-text" type="text" placeholder="支持placeholder">
+    <div class="switch-wrap"></div>
     <button id="button0">loading按钮</button>
     <button id="button1">totst按钮</button>
     <button id="button2">alert按钮</button>
 </div>
-
+<div>\E833</div>
 <script src="3rdlibs/zepto.js"></script>
 <script src="3rdlibs/require.min.js"></script>
 

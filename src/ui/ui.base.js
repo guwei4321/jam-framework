@@ -7,7 +7,7 @@ define([], function () {
 
     /** 框架内所有生成的元素的id，class都会加上此前缀 */
     base.config = {
-        prefix: 'cui-'
+        prefix: 'jui-'
     };
 
     /**

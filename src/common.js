@@ -78,73 +78,84 @@ require.config({
         // UI组件
         'cUI': app + 'ui/ui',
         'cUICore': app + 'ui/ui.core',
-        'cHistory': app + 'ui/ui.history',
         'cUIView': app + 'ui/ui.view',
-        'cDataSource': app + 'ui/ui.datasource', //数据源
         'cUIBase': app + 'ui/ui.base',
         'cUIAbstractView': app + 'ui/ui.abstract.view',
 
         'cUIAlert': app + 'ui/ui.alert',
-        'cUIAnimation': app + 'ui/ui.animation',
         'cUICitylist': app + 'ui/ui.citylist',
-        'cUIHeadWarning': app + 'ui/ui.head.warning',
         'cUIInputClear': app + 'ui/ui.input.clear',
         'cUILayer': app + 'ui/ui.layer',
 
-        'cUILayerList': app + 'ui/ui.layer.list',
 
         'cUILoading': app + 'ui/ui.loading',
-        'cUILoadingLayer': app + 'ui/ui.loading.layer',
         'cUIMask': app + 'ui/ui.mask',
         'cUIToast': app + 'ui/ui.toast',
-        'cUIWarning': app + 'ui/ui.warning',
-        'cUIWarning404': app + 'ui/ui.warning404',
-        'cUIHashObserve': app + 'ui/ui.hash.observe',
         'cUIEventListener': app + 'ui/ui.event.listener',
         'cUISwitch': app + 'ui/ui.switch',
         'cUINum': app + 'ui/ui.num',
         'cUITab': app + 'ui/ui.tab', //标签插件
         'cUIImageSlider': app + 'ui/ui.imageSlider',
-        'cUISlider': app + 'ui/ui.slider',
-        'cUIIdentitycard': app + 'ui/ui.identitycard'
+        'cUISlider': app + 'ui/ui.slider'
     }
 
 });
 var arrayModule = [];
-require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUIWarning', 'cUILoading', 'cUIImageSlider'], function (cUIMask, cUIAlert, cUIToast, cUIWarning, cUILoading, UIImageSlider) {
-    console.log($('.demo02'))
+require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUISwitch', 'cUIInputClear'], function (cUIMask, cUIAlert, cUIToast, cUILoading, UIImageSlider, cUISwitch, cUIInputClear) {
     var data = [
         { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },
         { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },
         { id: 3, src: 'imagesDEMO/slider-3.jpg', href: './res/img/3.jpg' },
         { id: 4, src: 'imagesDEMO/slider-4.jpg', href: './res/img/4.jpg' }
     ];
+    new cUIInputClear($('.input-text'));
+    new cUISwitch({
+        checked: true,
+        rootBox: $('.switch-wrap')
+    });
+    new cUISwitch({
+        checked: false,
+        rootBox: $('.switch-wrap')
+    });
+    // var data = [
+    //     { id: 1 },
+    //     { id: 2 },
+    //     { id: 3 },
+    //     { id: 4 }
+    // ];
     var imgSlider02 = new UIImageSlider({
         images: data,
         autoPlay: true,
         loop: true,
-        datamodel: {
-            data: data,
-            itemFn: function (item) {
-                return '<img data-src="' + item.src + '" src="' + item.src + '">';
-            }
+        _size: {
+            width: '360px',
+            height: '202px'
         },
-        createNav: function () {
-            if (this.sliderNav) return;
-            var nav = '<div class="cui-navContainer cui-slide-nav-new" style="background: #f2f2f2; color: rgb(20, 145, 197); position: absolute;  bottom: 0;">';
-            for (var i = 0; i < this.itemNum; i++) {
-                nav += '<span class="cui-slide-nav-item" data-index="' + i + '"></span>';
-            }
-            nav += '</div>';
-            this.sliderNav = $(nav);
-            this.sliderNav.find('span').width(this.wrapper.width() / this.itemNum - 1);
-            this.$el.append(this.sliderNav);
-            this.setzIndexTop(this.sliderNav);
-            this._setNavIndex(this.datamodel.index);
-        },
+        showArrows: true,
+        showNav: true,
+        // datamodel: {
+            // data: data,
+        //     itemFn: function (item) {
+        //         return '<img data-src="' + item.src + '" src="' + item.src + '">';
+        //     }
+        // },
+        // createNav: function () {
+        //     if (this.sliderNav) return;
+        //     var nav = '<div class="cui-navContainer cui-slide-nav-new" style="background: #f2f2f2; color: rgb(20, 145, 197); position: absolute;  bottom: 0;">';
+        //     for (var i = 0; i < this.itemNum; i++) {
+        //         nav += '<span class="cui-slide-nav-item" data-index="' + i + '"></span>';
+        //     }
+        //     nav += '</div>';
+        //     this.sliderNav = $(nav);
+        //     this.sliderNav.find('span').width(this.wrapper.width() / this.itemNum - 1);
+        //     this.$el.append(this.sliderNav);
+        //     this.setzIndexTop(this.sliderNav);
+        //     this._setNavIndex(this.datamodel.index);
+        // },
         displayNum: 1,
         container: $('.demo02')
     });
+    console.log(imgSlider02)
     imgSlider02.play();
 
     // var mask = new cUIMask({

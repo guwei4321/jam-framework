@@ -41,8 +41,10 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this.scope;
             //是否显示导航
             this.showNav = true;
+            //是否箭头
+            this.showArrows = false;
             //是否使用自动高度
-            this.autoHeight = false;
+            // this.autoHeight = false;
             //默认图，当没有图片数据的时候默认显示
             this.defaultImageUrl;
             //自定义高度
@@ -74,6 +76,8 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._imageNode;
             //导航层节点
             this._navNode;
+            // 左右箭头节点
+            this._arrowsNode;
             //图片加载节点
             this._imageLoaderNode;
             //手指起始位置位置
@@ -130,6 +134,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
                     // case "autoHeight":
                     case "loop":
                     case "showNav":
+                    case "showArrows":
                     case "defaultImageUrl":
                     case "defaultHeight":
                     case "imageSize":
@@ -152,13 +157,6 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._loadingImage.src = this.loadImageUrl;
             //错误图
             this._errorImage.src = this.errorImageUrl;
-
-            if (this.imageSize && this.imageSize.width && this.imageSize.height) {
-                this.autoHeight = false;
-            }
-            else {
-                this.autoHeight = true;
-            }
 
         },
         //开始播放，入口
@@ -191,12 +189,13 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         },
         //切换至下一张
         next: function () {
-            if (!this._changing) {
-                this._play();
+            if (this._changing) {
+                return;
             }
+            this._play();
         },
         //切换至上一张
-        pre: function () {
+        pre: function () {          
             if (this._changing) {
                 return;
             }
@@ -231,7 +230,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._changeImage();
         },
         //根据默认的dir立刻切换图片
-         _play: function () {
+        _play: function () {
             if (this.dir === this.ENUM.DIR.RIGHT) {
                 this._imageToRight();
             }
@@ -240,50 +239,54 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }
         },
         //清除自动播放
-         _clearAutoPlay: function () {
+        _clearAutoPlay: function () {
             clearTimeout(this._autoPlayTimeout);
         },
         //验证参数
-         _validArgs: function () {
+        _validArgs: function () {
             if (!this.container || !this._containerNode) {
                 throw "[c.widget.imageSlider]:no container!";
             }
         },
         //纠正某些参数设置不合理
-         _correctArgs: function () {
+        _correctArgs: function () {
             //轮播延迟过小
             if (this.delay <= 500) {
                 this.delay = 2 * 1000;
             }
         },
         //创建HTML
-         _createHTML: function () {
-            return ['<div class="cui-sliderContainer" style="width:100%;position:relative;">',
-                '<div class="slider_wrap" style="width:100%;height:100%;">',
+        _createHTML: function () {
+            return ['<div class="jui-slider_wrap" style="width:100%;">',
+                '<div class="jui-slider_content" style="width:100%;height:100%;">',
                 '</div>',
-                '<div class="slider_bar" style="color:#1491c5;position:absolute;"></div>',
-                '<div class="cui-imageLoader">',
+                '<div class="jui-slider_bar"></div>',
+                '<div class="jui-slider_arrow"></div>',
+                '<div class="jui-imageLoader">',
                 '</div>'].join("");
         },
         //创建导航
-         _createNav: function () {
+        _createNav: function () {
             var navhtml = [];
             for (var i = 0; i < this._imageCount; i++) {
                 var current = (i == this.index ? "cui-slide-nav-item-current" : "");
-                navhtml.push('<span class="cui-slide-nav-item ' + current + '"></span>')
-                //navhtml.push("<span data-index="" + i + "" style="padding-left:10px"> " + current + "</span>");
+                navhtml.push('<span data-index="'+i+'" class="cui-slide-nav-item ' + current + '"></span>')
             }
             this._navNode.empty().html(navhtml.join(" "));
         },
         //注入HTML 以及 初始化对象
-         _injectHTML: function () {
+        _injectHTML: function () {
             this._rootNode = $(this._createHTML());
             this._containerNode.html(this._rootNode);
             //   console.log(this._containerNode);
-            this._imageNode = this._rootNode.find(".slider_wrap");
-            this._navNode = this._rootNode.find(".slider_bar");
+            this._imageNode = this._rootNode.find(".jui-slider_content");
+            this._navNode = this._rootNode.find(".jui-slider_bar");
+            this._arrowsNode = this._rootNode.find(".jui-slider_arrow");
             if (!this.showNav) {
                 this._navNode.css("display", "none");
+            }
+            if (this.showArrows) {
+                this._arrowsNode.append('<div data-role="pre" class="jui-slider_arrowLeft"></div><div data-role="next" class="jui-slider_arrowRight"></div>');
             }
             this._imageNode.empty();
             this._createLoading();
@@ -302,7 +305,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }
         },
         //单击
-         _onImageClick: function () {
+        _onImageClick: function () {
             var imageInfo = this.images[this.index];
             if (imageInfo && imageInfo.onClick) {
                 imageInfo.onClick.call(this.scope || this, imageInfo);
@@ -313,7 +316,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }
         },
         //获取image
-         _createImageItem: function (index, callback) {
+        _createImageItem: function (index, callback) {
             this._isloadingImage = true;
             !index && (index = 0);
             var imageInfo = this._getImageInfo(index);
@@ -325,10 +328,6 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             var self = this;
             image.onload = function () {
                 imageInfo.orgImage = image;
-                if (!self.autoHeight) {
-                    self._defaultSize.width = image.width;
-                    self._defaultSize.height = image.height;
-                }
                 self._isloadingImage = false;
                 callback.call(self, imageInfo, image);
             }
@@ -345,7 +344,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }
         },
         //获取image 配置信息
-         _getImageInfo: function (index) {
+        _getImageInfo: function (index) {
             !index && (index = 0);
             for (var i = 0, len = this.images.length; i < len; i++) {
                 if (index === i) {
@@ -355,19 +354,27 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             throw new Error("[c.ui.imageSlider]:image index is " + index + ",but images.length is " + len);
         },
         //绑定事件
-         _bindEvents: function () {
-            this._containerNode.bind("touchmove", $.proxy(this._touchmove, this));
-            this._containerNode.bind("touchstart", $.proxy(this._touchstart, this));
-            this._containerNode.bind("touchend", $.proxy(this._touchend, this));
-            $(window).on("resize", $.proxy(this._resize, this));
+        _bindEvents: function () {
+            this._containerNode.bind("mouseover", $.proxy(this._clearAutoPlay, this));
+            this._containerNode.bind("mouseout", $.proxy(this._autoPlay, this));
             this._navNode.bind("click", $.proxy(this._switchImage, this));
             this._imageNode.bind("click", $.proxy(this._onImageClick, this));
+            this._arrowsNode.bind("click", $.proxy(this._onArrowsClick, this));
+        },
+        //手动前后切换图片
+        _onArrowsClick: function (e) {
+            var element = e.targetElement || e.srcElement;
+            var role = $(element).data("role");
+            if (role === 'pre') {
+                this.pre();
+            } else {
+                this.next();
+            }
         },
         //手动切换图片
-         _switchImage: function (e) {
+        _switchImage: function (e) {
             var element = e.targetElement || e.srcElement;
             var index = $(element).data("index");
-
             if (index !== 0 && !index) {
                 return;
             }
@@ -379,7 +386,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._changeImage();
         },
         //图片左滑
-         _imageToRight: function () {
+        _imageToRight: function () {
             //当处于第一张时，调到最后一样
             if (this.index <= 0) {
                 if (!this.loop) {
@@ -393,7 +400,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._changeImage(this.ENUM.DIR.LEFT);
         },
         //图片右滑
-         _imageToLeft: function () {
+        _imageToLeft: function () {
             if (this.index >= this._imageCount - 1) {
                 if (!this.loop) {
                     return;
@@ -472,51 +479,10 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }, this));
 
         },
-        _touchmove: function (e) {
-            if (this._isMoved) return;
-            var pos = UIBase.getMousePosOfElement(e.targetTouches[0], e.currentTarget);
-
-            if (!this._isMovedChecked) {
-                var differX = Math.abs(pos.x - this._handerStartPos.x);
-                var differY = Math.abs(pos.y - this._handerStartPos.y);
-
-                if (differY > differX) {
-                    this._isMoved = true;
-                    return;
-                }
-            }
-            this._isMovedChecked = true;
-
-            e.preventDefault();
-            if (this._changing) {
-                return;
-            }
-
-            //计算手势
-            var diffX = pos.x - this._handerStartPos.x;
-            if (diffX > 0 && diffX > this._moveValue) {
-                this._imageToRight();
-            }
-            else if (diffX < 0 && Math.abs(diffX) > this._moveValue) {
-                this._imageToLeft();
-            }
-        },
-        _touchstart: function (e) {
-            this._isMoved = false;
-            this._isMovedChecked = false;
-            var pos = UIBase.getMousePosOfElement(e.targetTouches[0], e.currentTarget);
-            this._handerStartPos = {
-                x: pos.x,
-                y: pos.y
-            };
-        },
-        _touchend: function (e) {
-            e.preventDefault();
-        },
         //根据屏幕宽度，等比例缩放显示高度和宽度
-         _setSize: function (height, width) {
-             this._size.width = Math.ceil(this.container.width());
-             this._size.height = Math.ceil(this.container.height());
+        _setSize: function (height, width) {
+             this._size.width = width || Math.ceil(this.container.width());
+             this._size.height = height || Math.ceil(this.container.height());
 
             this._rootNode.css("width", this._size.width).css("height", this._size.height);
             this._imageNode.find("div").find("img").css("width", this._size.width).css("height", this._size.height);
@@ -527,7 +493,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }
         },
         //定位导航位置
-         _setNavPos: function () {
+        _setNavPos: function () {
             var left = (this._size.width - 2 * (this._imageCount * 10)) / 2; //居中计算LEFT值
             var top = this._size.height - 30; //距离底部边框30px
             this._navNode.css("left", left).css("top", top);
@@ -537,15 +503,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._lastSize.width = this._size.width;
             this._lastSize.height = this._size.height;
             //定义了图片宽高，则使用宽高的值，进行图片压缩
-            if (this.imageSize && this.imageSize.height && this.imageSize.width) {
-                this._setSize(this.imageSize.height, this.imageSize.width);
-            }
-            //反之，按照图片的宽度与显示设备的宽度来等比缩放
-            else {
-                if (this._displayImage && !this._displayImage.loadError) {
-                    this._setSize(this._displayImage.orgImage.height, this._displayImage.orgImage.width);
-                }
-            }
+            this._setSize();
         },
         //轮播结束时触发
          _changeCompeted: function () {
@@ -557,9 +515,8 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             //切换导航到相应的索引
             this._changeNav();
             //如果没有设置图片宽高，则根绝当前图片来重新渲染图片大小
-            if (this.autoHeight) {
-                this._resize();
-            }
+            this._resize();
+
             //回调
             this.onChanged && this.onChanged.call(this.scope || this, this.images[this.index], this.index);
         },
@@ -574,6 +531,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
          _createImageContainer: function () {
             var imageInfo = this.images[this.index];
             this._loadingNode.css("display", "none");
+            console.log(imageInfo)
             if (!imageInfo.node) {
                 var top = UIBase.getElementPos(this._rootNode[0]).top - 48;
                 if (imageInfo.loadError) {
@@ -589,9 +547,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
                     e.preventDefault();
                 });
             }
-            if (this.autoHeight) {
-                this._resize();
-            }
+            this._resize();
         },
         _createLoading: function () {
             if (this.firstLoad) {
@@ -602,10 +558,10 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
 
                 //第一次不要显示loading
                 this._loadingNode.html(loading.join(" ")).hide();
-                if (!this.autoHeight) {
-                    this._resize();
-                    this._setLoadingPos();
-                }
+                // if (!this.autoHeight) {
+                this._resize();
+                this._setLoadingPos();
+                // }
 
 
                 this._imageNode.append(this._loadingNode);
@@ -632,12 +588,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
                     var defaultImageNode = $(self._createImageHtml(self.defaultImageUrl));
                     self._imageNode.append(defaultImageNode);
                     self._displayImage = defaultImage;
-                    if (!self.autoHeight) {
-                        self._setSize(self.imageSize.height, self.imageSize.width);
-                    }
-                    else {
-                        self._setSize(defaultImage.height, defaultImage.width);
-                    }
+                    self._setSize();
                 }
             }
         },
@@ -646,7 +597,5 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
                 + this._size.width + 'px;height:' + this._size.height + 'px" src="' +
                 src + '" alt="' + (alt ? alt : "") + '"></div>'
         }
-        //指定某个控件在容器中居中
-
     });
 });

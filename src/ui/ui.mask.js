@@ -15,7 +15,9 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
     }
     /** 构造函数入口 */
     options.initialize = function ($super, opts) {
-        this.isRootBody = this.getRootBody(opts.rootBox);
+        if (!!opts ) {
+            this.isRootBody = this.getRootBody(opts.rootBox);
+        }
         this.bindEvent(opts);
         $super($.extend(this,opts));
     };

@@ -23,6 +23,10 @@ define(['libs'], function (libs) {
             $input.each(function () {
                 var clearButton = $('<a class="clear-input ' + clearClass + '" href="javascript:;"><span></span></a>'),
                     $input = $(this);
+                $input.wrap('<div class="clear-input-box"></div>')
+                if ( $input.prop('disabled') ) {
+                    $input.parent().addClass('input-wrap')
+                }
                 if (isNew) {
                     clearButton = $('<span class="cui-focus-close ' + clearClass + '">×</span>')
                 }
@@ -50,7 +54,7 @@ define(['libs'], function (libs) {
                         top: 'auto'
                     });
                 }
-                $input.parent().addClass('clear-input-box');
+                // $input.parent().addClass('clear-input-box');
                 if (!isPlaceHolder) {
                     var placeholder = $input.attr('placeholder'),
                         placeholderNode = $('<span class="placeholder-title' + (clearClass ? ' placeholder-' + clearClass : '') + '">' + placeholder + '</span>');

@@ -6,7 +6,7 @@ define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
     var options = {};
 
     var _config = {
-        prefix: 'cui-'
+        prefix: 'jui-'
     };
 
     options.__propertys__ = function () {
@@ -28,7 +28,7 @@ define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
         this.allowsConfig.changed = true; //开启changed
         this.checkedFlag = opts.checked;
         $super(opts);
-
+        
         this.show();
 
         //初始化时不再执行动画
@@ -46,25 +46,17 @@ define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
         this.addEvent('onShow', function () {
             var scope = this;
 
-            this.el = this.root.find('.cui-switch');
-            this.switchBar = this.el.find('.cui-switch-bg');
+            this.el = this.root.find('.jui-switch');
+            this.switchBar = this.el.find('.jui-switch-bg');
 
-            $.flip(this.root, 'left', $.proxy(function () {
-                this.unChecked();
-            }, this));
-
-            $.flip(this.root, 'right', $.proxy(function () {
-                this.checked();
-            }, this));
-
-            $.flip(this.root, 'tap', $.proxy(function () {
+            this.root.bind('click', $.proxy(function(){
                 if (this.el.hasClass('current')) {
                     this.unChecked();
                 } else {
                     this.checked();
                 }
                 return;
-            }, this));
+            },this))
 
         });
 
@@ -83,9 +75,9 @@ define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
     options.createHtml = function () {
         var checkedStyle = this.checkedFlag ? 'current' : '';
         return [
-        '<div class="cui-switch ' + checkedStyle + '">',
-          '<div class="cui-switch-bg ' + checkedStyle + '"></div>',
-          '<div class="cui-switch-scroll"></div>',
+        '<div class="jui-switch ' + checkedStyle + '">',
+          '<div class="jui-switch-bg ' + checkedStyle + '"></div>',
+          '<div class="jui-switch-scroll"></div>',
         '</div>'
       ].join('');
     };

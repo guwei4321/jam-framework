@@ -127,7 +127,7 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUI
         images: data,
         autoPlay: true,
         loop: true,
-        _size: {
+        imageSize: {
             width: '360px',
             height: '202px'
         },
@@ -152,7 +152,6 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUI
         //     this.setzIndexTop(this.sliderNav);
         //     this._setNavIndex(this.datamodel.index);
         // },
-        displayNum: 1,
         container: $('.demo02')
     });
     console.log(imgSlider02)

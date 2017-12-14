@@ -549,8 +549,13 @@ input::-webkit-input-placeholder {
 
 .clear-input-box {
     margin: 20px;
+    padding: 10px;
+    border: 1px solid #bbb;
     display: inline-block;
     position: relative;
     width: 260px;
     border-radius: 2px;
+}
+.clear-input-box input {
+    border: none;
 }

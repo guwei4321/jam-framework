@@ -1,8 +1,7 @@
 ﻿/**
-* @author ddpei@Ctrip.com
-* @class c.ui.imageSlider
-* @description ImageSldier
-*/
+ * 图片幻灯片
+ * @module ui/imageSlider
+ */
 define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
     "use strict";
     return new cBase.Class({
@@ -29,8 +28,6 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this.errorImage = "";
             //图片加载中显示的图片
             this.lodingImage = "";
-            //轮播开始的事件
-            this.onChange;
             //图片点击事件
             this.onImageClick;
             //容器 string
@@ -47,8 +44,6 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             // this.autoHeight = false;
             //默认图，当没有图片数据的时候默认显示
             this.defaultImageUrl;
-            //自定义高度
-            this.defaultHeight;
             //自定义高度
             this.imageSize;
             //是否循环播放
@@ -92,7 +87,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             //是否已经创建
             this._played = false;
             //当前轮播尺寸
-            this._size = { height: 0, width: 0 };
+            this.imageSize = { height: 0, width: 0 };
             //上一次的轮播尺寸
             this._lastSize = { height: 0, width: 0 };
             //当前轮播的对象
@@ -124,8 +119,6 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
                     case "delay":
                     case "dir":
                     case "index":
-                    case "onChange":
-                    case "autoPlay":
                     case "onImageClick":
                     case "scope":
                     case "onChanged":
@@ -136,7 +129,6 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
                     case "showNav":
                     case "showArrows":
                     case "defaultImageUrl":
-                    case "defaultHeight":
                     case "imageSize":
                         this[key] = args[key];
                         break;
@@ -447,18 +439,18 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
                 offsetNextImageLeft = 0,
                 offsetDisplayImageLeft = 0;
             if (dir === this.ENUM.DIR.LEFT) {
-                initNextImageLeft = -1 * this._size.width;
+                initNextImageLeft = -1 * this.imageSize.width;
                 initDisplayImageLeft = 0;
 
                 offsetNextImageLeft = 0;
-                offsetDisplayImageLeft = this._size.width;
+                offsetDisplayImageLeft = this.imageSize.width;
             }
             else {
-                initNextImageLeft = this._size.width;
+                initNextImageLeft = this.imageSize.width;
                 initDisplayImageLeft = 0;
 
                 offsetNextImageLeft = 0;
-                offsetDisplayImageLeft = -1 * this._size.width;
+                offsetDisplayImageLeft = -1 * this.imageSize.width;
             }
 
 
@@ -481,11 +473,11 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         },
         //根据屏幕宽度，等比例缩放显示高度和宽度
         _setSize: function (height, width) {
-             this._size.width = width || Math.ceil(this.container.width());
-             this._size.height = height || Math.ceil(this.container.height());
+             this.imageSize.width = width || Math.ceil(this.container.width());
+             this.imageSize.height = height || Math.ceil(this.container.height());
 
-            this._rootNode.css("width", this._size.width).css("height", this._size.height);
-            this._imageNode.find("div").find("img").css("width", this._size.width).css("height", this._size.height);
+            this._rootNode.css("width", this.imageSize.width).css("height", this.imageSize.height);
+            this._imageNode.find("div").find("img").css("width", this.imageSize.width).css("height", this.imageSize.height);
 
             //定位导航
             if (this.showNav) { //如果不显示导航，则不定位导航
@@ -494,14 +486,14 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         },
         //定位导航位置
         _setNavPos: function () {
-            var left = (this._size.width - 2 * (this._imageCount * 10)) / 2; //居中计算LEFT值
-            var top = this._size.height - 30; //距离底部边框30px
+            var left = (this.imageSize.width - 2 * (this._imageCount * 10)) / 2; //居中计算LEFT值
+            var top = this.imageSize.height - 30; //距离底部边框30px
             this._navNode.css("left", left).css("top", top);
         },
         _resize: function () {
             //自适应高度，根据图片不同，生成的高度不同
-            this._lastSize.width = this._size.width;
-            this._lastSize.height = this._size.height;
+            this._lastSize.width = this.imageSize.width;
+            this._lastSize.height = this.imageSize.height;
             //定义了图片宽高，则使用宽高的值，进行图片压缩
             this._setSize();
         },
@@ -569,9 +561,9 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             }
         },
         _setLoadingPos: function () {
-            this._loadingNode.css("position", "absolute").css("height", this._size.height).css("width", this._size.width);
-            if (this._size.height) {
-                var top = (this._size.height - 70) / 2;
+            this._loadingNode.css("position", "absolute").css("height", this.imageSize.height).css("width", this.imageSize.width);
+            if (this.imageSize.height) {
+                var top = (this.imageSize.height - 70) / 2;
                 this._loadingNode.find(".cui-breaking-load").css("top", top);
             }
         },
@@ -594,7 +586,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
         },
         _createImageHtml: function (src, alt) {
             return '<div class="image-node slider-imageContainerNode"><img style="width:'
-                + this._size.width + 'px;height:' + this._size.height + 'px" src="' +
+                + this.imageSize.width + 'px;height:' + this.imageSize.height + 'px" src="' +
                 src + '" alt="' + (alt ? alt : "") + '"></div>'
         }
     });

@@ -7,8 +7,8 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
 
     /** 相关属性 */
     options.__propertys__ = function () {
-        this.isRootBody = true;  // 禁止滚动
-        this.disableScroll = false;  // 指定父元素
+        this.isRootBody = true;  //  父级元素是否是body节点
+        this.disableScroll = false;  // 禁止滚动
         this.backgroundColor = '#000';
         this.prefix = 'jui-';
 

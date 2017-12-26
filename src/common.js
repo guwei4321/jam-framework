@@ -42,7 +42,9 @@ require.config({
         // common 基础库
         'c': app + 'common/c',
         'cBase': app + 'common/base',
-        'cAjax': app + 'common/ajax',
+        'jAjax': app + 'common/ajax',
+        'jMap': app + 'common/map',
+        'jSet': app + 'common/set',
         'cLazyload': app + 'common/lazyload', //加载
         'cListAdapter': app + 'common/common.listadapter',
         'cGeoService': app + 'common/geo.service',
@@ -96,12 +98,31 @@ require.config({
         'cUINum': app + 'ui/ui.num',
         'cUITab': app + 'ui/ui.tab', //标签插件
         'cUIImageSlider': app + 'ui/ui.imageSlider',
-        'cUISlider': app + 'ui/ui.slider'
+        'cUISlider': app + 'ui/ui.slider',
+        'cUiAutoTextArea': app + 'ui/ui.autoTextArea' // autoSize
     }
 
 });
 var arrayModule = [];
-require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUISwitch', 'cUIInputClear'], function (cUIMask, cUIAlert, cUIToast, cUILoading, UIImageSlider, cUISwitch, cUIInputClear) {
+require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUISwitch', 'cUIInputClear', 'cUiAutoTextArea', 'jMap', 'jSet'], function (cUIMask, cUIAlert, cUIToast, cUILoading, UIImageSlider, cUISwitch, cUIInputClear, cUiAutoTextArea, jMap, jSet) {
+    const items = new jSet([1, 2, 3, 4, 5]);
+    console.log(items)
+    // console.log(items.keys())
+    // console.log()
+    // for (let item of items.values()) console.log(item);
+    // console.log(items.forEach())
+    var sMap = new jMap([
+        ['name', '张三'],
+        ['title', 'Author']
+    ]);
+    sMap.set(1, 'aaa')
+    sMap.set(1, 'bbb')
+    sMap.set(['a'],222);
+    console.log(sMap)
+    var autoSizeInput = new cUiAutoTextArea({
+        nodes: $('textarea')
+    });
+    console.log(autoSizeInput)
     var data = [
         { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },
         { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },
@@ -154,7 +175,6 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUI
         // },
         container: $('.demo02')
     });
-    console.log(imgSlider02)
     imgSlider02.play();
 
     // var mask = new cUIMask({
@@ -186,6 +206,7 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUI
             }
         ]
     });
+    console.log(alert)
     var alert1 = new cUIAlert({
         showTitle: true,
         title: '头部1',
@@ -242,7 +263,6 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUI
     });
     $('#button0').on('click', function(){
         loading.show(function () {
-            console.log(11312)
         });
         // toast.hide(function (){
         //     console.log(12312)
@@ -254,7 +274,7 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUI
     $('#button2').on('click', function () {
         alert.show();
     })
-    
+
     // toast.hide(function () {
     //     console.log(11312)
     // });

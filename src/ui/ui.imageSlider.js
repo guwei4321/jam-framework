@@ -523,7 +523,6 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
          _createImageContainer: function () {
             var imageInfo = this.images[this.index];
             this._loadingNode.css("display", "none");
-            console.log(imageInfo)
             if (!imageInfo.node) {
                 var top = UIBase.getElementPos(this._rootNode[0]).top - 48;
                 if (imageInfo.loadError) {

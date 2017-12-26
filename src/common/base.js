@@ -17,7 +17,7 @@ define(['libs', 'cCoreInherit', 'cUtility'], function (libs, cCoreInherit, util)
     var Base = {};
 
     /** 委托自cUtility */
-    Base.isInApp = util.isInApp;
+    // Base.isInApp = util.isInApp;
 
     /** 委托自cCoreInherit */
     Base.Class = cCoreInherit.Class;
@@ -53,11 +53,11 @@ define(['libs', 'cCoreInherit', 'cUtility'], function (libs, cCoreInherit, util)
     /**
      * @deprecated
      * @description 2014/1/20 zhoutao 明天排查，如果没有地方引用，直接干掉这个方法
-  
+
         Base.Type = function(o) {
           return _toString(o);
         };
-  
+
         (function(Type, types) {
           for (var i = 0; i < types.length; i++) {
             Type['is' + types[i]] = (function(type) {
@@ -67,7 +67,7 @@ define(['libs', 'cCoreInherit', 'cUtility'], function (libs, cCoreInherit, util)
             })(types[i]);
           }
         })(Base.Type, ['Boolean', 'Object', 'String', 'Number', 'Date', 'Function', 'Array', 'Error', 'RegExp', 'Arguments']);
-  
+
      */
 
     Base.Object = new Base.Class({});

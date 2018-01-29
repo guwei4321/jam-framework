@@ -1,5 +1,5 @@
 ﻿/**
- * @description 
+ * @description
  */
 define(['cBase', 'cUI', 'cUtility', 'cView', 'cModel', 'cStore', 'cStorage', 'cAjax', 'CommonStore', 'cLazyload'],
     function (cBase, cUI, cUtility, cView, cModel, cStore, cStorage, cAjax, cCommonStore, lazyload) {

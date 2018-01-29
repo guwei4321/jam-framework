@@ -2,7 +2,7 @@
  * @class Class类，框架的基础类体系
  * @description Class类，框架的基础类体系
  */
-define(['libs'], function (libs) {
+define([], function () {
 
     var slice = [].slice;
     var Core = function () { };

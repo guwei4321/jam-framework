@@ -1,7 +1,7 @@
 ﻿/**
 * @description 带删除按钮的文本框
 */
-define(['libs'], function (libs) {
+define([], function () {
 
     var InputClear = (function () {
 

@@ -1,7 +1,7 @@
 ﻿/**
 * @description 提示框
 */
-define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
+define(['../common/base', './ui.layer'], function (cBase, Layer) {
 
     var options = {};
 

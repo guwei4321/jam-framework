@@ -1,7 +1,7 @@
 ﻿/**
 * @description 加减控件
 */
-define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
+define(['common/cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
 
     var options = {};
 

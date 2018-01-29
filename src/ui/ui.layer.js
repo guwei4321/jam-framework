@@ -2,7 +2,7 @@
 * @class cUILayer
 * @description 弹出层类的父类
 */
-define(['libs', 'cBase', 'cUIAbstractView', 'cUIMask'], function (libs, cBase, AbstractView, Mask) {
+define(['../common/base', './ui.abstract.view', './ui.mask'], function (cBase, AbstractView, Mask) {
 
     var options = {};
 

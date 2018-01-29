@@ -1,7 +1,7 @@
 ﻿/**
 * @description 用于自建事件机制
 */
-define(['libs', 'cBase'], function (libs, cBase) {
+define(['../common/base'], function (cBase) {
 
     var options = {};
 

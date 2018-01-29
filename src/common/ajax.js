@@ -1,7 +1,7 @@
 /**
  * @description ajax
  */
-define(['libs'], function (libs) {
+define([], function () {
 
     var contentTypeMap = {
         'json': 'application/json; charset=utf-8',
@@ -114,7 +114,7 @@ define(['libs'], function (libs) {
                 // success: function (res) {
                 //+1…2014-08-19
                 success: function (res, status, xhr) {
-                    //+5…2014-08-19          
+                    //+5…2014-08-19
                     opt.callback(res);
                 },
                 error: function (err) {

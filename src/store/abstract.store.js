@@ -1,5 +1,4 @@
 /**
- * @author zsb张淑滨 <shbzhang@Ctrip.com>
  * @class AbsctractStore
  * @description 抽象Store
  */

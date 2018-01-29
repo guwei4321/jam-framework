@@ -1,4 +1,4 @@
-define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
+define(['../common/base', './ui.abstract.view'], function (cBase, AbstractView) {
     var options = {};
 
     // var _config = {

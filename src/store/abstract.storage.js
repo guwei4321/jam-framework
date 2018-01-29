@@ -149,7 +149,6 @@ define(['cBase'], function (cBase) {
          * @param {Date} [optional] savedate 可选,数据保存时间
          * @param {Object} [optional] oldVal 可选,可以为store存一个过去值,供回滚时使用,已废弃
          * @return {Boolean} 成功true,失败false
-         * @desctription 向Store中存放数据
          */
         set: function (key, value, timeout, tag, savedate, oldVal) {
             savedate = savedate || (new CDate()).format('Y/m/d H:i:s');

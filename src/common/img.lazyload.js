@@ -40,7 +40,7 @@
             this.width = opts.width;
             this.height = opts.height;
 
-            this.loadingImg = opts.loadingImg || 'http://pic.c-ctrip.com/vacation_v2/h5/group_travel/no_product_pic.png';
+            this.loadingImg = opts.loadingImg || '';
             this.loadingBg = opts.loadingBg || '#ebebeb';
 
             this.needWrapper = false;

@@ -2,7 +2,7 @@
 * @class cUILoading
 * @description loading层
 */
-define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
+define(['../common/base', './ui.layer'], function (cBase, Layer) {
 
     var options = {};
 

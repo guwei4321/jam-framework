@@ -1,5 +1,4 @@
 /**
- * @author zsb张淑滨 <shbzhang@Ctrip.com>
  * @class LocalStore
  * @description 以localstorage为数据存储的Store
  */

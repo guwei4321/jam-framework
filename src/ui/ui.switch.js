@@ -1,7 +1,7 @@
 ﻿/**
 * @description 提供开关阀
 */
-define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
+define(['../common/base', './ui.abstract.view'], function (cBase, AbstractView) {
 
     var options = {};
 
@@ -28,7 +28,7 @@ define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
         this.allowsConfig.changed = true; //开启changed
         this.checkedFlag = opts.checked;
         $super(opts);
-        
+
         this.show();
 
         //初始化时不再执行动画

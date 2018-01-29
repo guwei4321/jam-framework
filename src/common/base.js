@@ -1,7 +1,7 @@
 /**
  * @description 提供框架基本的方法
  */
-define(['libs', 'cCoreInherit', 'cUtility'], function (libs, cCoreInherit, util) {
+define(['../core/core.inherit', '../util/utility'], function (cCoreInherit, util) {
 
     "use strict";
 

@@ -1,4 +1,4 @@
-define(['cCoreInherit', 'cUtilityServertime'], function (inherit, UtilityServertime) {
+define(['../core/core.inherit', './utility.servertime'], function (inherit, UtilityServertime) {
     var Base = {};
 
     /* Date对象，对时间提供一些常用方法 */

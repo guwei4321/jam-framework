@@ -1,7 +1,7 @@
 /**
  * @description map
  */
-define(['libs', 'cBase'], function (libs, cBase) {
+define(['./base'], function (cBase) {
     // 1.类似于数组，但是成员的值都是唯一的，没有重复的值。
     // 2.如果读取一个未知的键，则返回undefined。
     // var map = typeof Map === "function" ? new Map() : (function () {

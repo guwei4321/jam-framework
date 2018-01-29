@@ -1,7 +1,7 @@
 ﻿/**
 * @description 加减控件
 */
-define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
+define(['../common/base', './ui.abstract.view'], function (cBase, AbstractView) {
 
     var options = {};
 
@@ -84,7 +84,7 @@ define(['cBase', 'cUIAbstractView'], function (cBase, AbstractView) {
 
         this._tab = this.root.find('.cui-tab-scrollbar')
 
-        //如果当前值与设置的值不相等就change了 
+        //如果当前值与设置的值不相等就change了
         var isChange = this.selectedKey == v;
         this.selectedKey = v;
 

@@ -1,7 +1,7 @@
 ﻿/**
 * @description 蒙版
 */
-define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, cUIBase, AbstractView) {
+define(['../common/base', './ui.base', './ui.abstract.view'], function (cBase, cUIBase, AbstractView) {
 
     var options = {};
 
@@ -34,7 +34,7 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
                 this.resize();
             }, this);
             if (this.isRootBody && this.disableScroll) {
-               
+
                 this.prevent = $.proxy(function() {
                     cUIBase.preventDefault();
                 }, this);
@@ -55,7 +55,7 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
 
                 this.onResize();
             }
-            
+
         });
 
         this.addEvent('onHide', function () {
@@ -74,10 +74,10 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
     */
     options.getRootBody = function(el){
         if (!el) return true;
-        if (el.attr('tagName').toLowerCase() !== 'body' ) {
-            return false;
-        } else {
+        if (el.is('body')) {
             return true;
+        } else {
+            return false;
         }
     }
 
@@ -120,7 +120,7 @@ define(['libs', 'cBase', 'cUIBase', 'cUIAbstractView'], function (libs, cBase, c
                 height: '100%'
             });
         }
-        
+
     };
 
     return new cBase.Class(AbstractView, options);

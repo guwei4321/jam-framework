@@ -1,4 +1,4 @@
-﻿define(['libs'], function (libs) {
+﻿define([], function () {
 
     var result = {};
     _toString = Object.prototype.toString;
@@ -96,7 +96,6 @@
             return false;
         },
         /*判断身份证有效性**
-        * 修复isIdCard_bak的bug(http://cp4.mgmt.ctripcorp.com/browse/FX21LIZARD-38)
         * clone from pc tuna
         * @by ffpan 2014/04/17
         ***/

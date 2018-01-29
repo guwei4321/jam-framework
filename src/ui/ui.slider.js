@@ -1,6 +1,6 @@
 ﻿/**
 */
-define(['cBase', 'cUIAbstractView', 'cUIMask'], function (cBase, cUIAbstractView, cUIMask) {
+define(['../common/base', './ui.abstract.view', 'cUIMask'], function (cBase, cUIAbstractView, cUIMask) {
 
     return cBase.Class(cUIAbstractView, {
         __propertys__: function () {

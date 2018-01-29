@@ -1,110 +1,17 @@
-﻿// (function () {
-
-//   var protocol = document.location.protocol;
-//   if (protocol != "https:") protocol = "http:";
-//   var app = protocol + '//webresource.c-ctrip.com/code/lizard/1.1/web/';
-//  if (document.location.href.indexOf('localhost') > 0 || document.location.href.indexOf('172') > 0) app = 'http://172.16.140.104:5389//webapp/app/';
-var app = './';
-require.config({
-    baseUrl: '',
-    shim: {
-        _: {
-            exports: '_'
-        },
-        // B: {
-        //     deps: [
-        //         '_'
-        //     ],
-        //     exports: 'Backbone'
-        // },
-        M: {
-            exports: 'mustache'
-        },
-        cBase: {
-            exports: 'cBase'
-        },
-        cAjax: {
-            exports: 'cAjax'
-        },
-        cView: {
-            deps: [
-                'B'
-            ],
-            exports: 'cView'
-        }
-    },
-    paths: {
-
-        'libs': app + '3rdlibs/libs',
-
-
-        // ---------------------------------------------------
-        // common 基础库
-        'c': app + 'common/c',
-        'cBase': app + 'common/base',
-        'jAjax': app + 'common/ajax',
-        'jMap': app + 'common/map',
-        'jSet': app + 'common/set',
-        'cLazyload': app + 'common/lazyload', //加载
-        'cListAdapter': app + 'common/common.listadapter',
-        'cGeoService': app + 'common/geo.service',
-        'cGeoHelper': app + 'common/geo.helper',
-        'cImgLazyload': app + 'common/img.lazyload',
-
-
-        // util-----------------------------------------------------------
-        'cUtilityHash': app + 'util/utility.hash',
-        'cUtilityDate': app + 'util/utility.date', // Date对象，对时间提供一些常用方法
-        'cUtilityServertime': app + 'util/utility.servertime',
-        'cUtilityCrypt': app + 'util/utility.crypt',
-        'cUtility': app + 'util/utility',
-        'Validate': app + 'util/validate', //数据验证
-
-
-        //-------------------------------------------------------------
-        'cCoreInherit': app + 'core/core.inherit', // Class类，框架的基础类体系
-
-        //-------------------------------------------------------------
-        // Store
-        'cAbstractStore': app + 'store/abstract.store', //抽象store
-        'cAbstractStorage': app + 'store/abstract.storage', //抽象storage
-        'cStore': app + 'store/local.store', //提供存取具体数据的Store基础类
-        'cStorage': app + 'store/local.storage', //提供存取localStorage/sessionStorage的静态方法
-        'cSessionStore': app + 'store/session.store', //提供存取具体数据的Store基础类
-        'cSessionStorage': app + 'store/session.storage', //提供存取localStorage/sessionStorage的静态方法
-        'memStore': app + 'store/memorystore',
-        'CommonStore': app + 'store/common.store', //公用的store
-        'PageStore': app + 'store/store.package',
-
-        //-----------------------------------------------------------
-        // UI组件
-        'cUI': app + 'ui/ui',
-        'cUICore': app + 'ui/ui.core',
-        'cUIView': app + 'ui/ui.view',
-        'cUIBase': app + 'ui/ui.base',
-        'cUIAbstractView': app + 'ui/ui.abstract.view',
-
-        'cUIAlert': app + 'ui/ui.alert',
-        'cUICitylist': app + 'ui/ui.citylist',
-        'cUIInputClear': app + 'ui/ui.input.clear',
-        'cUILayer': app + 'ui/ui.layer',
-
-
-        'cUILoading': app + 'ui/ui.loading',
-        'cUIMask': app + 'ui/ui.mask',
-        'cUIToast': app + 'ui/ui.toast',
-        'cUIEventListener': app + 'ui/ui.event.listener',
-        'cUISwitch': app + 'ui/ui.switch',
-        'cUINum': app + 'ui/ui.num',
-        'cUITab': app + 'ui/ui.tab', //标签插件
-        'cUIImageSlider': app + 'ui/ui.imageSlider',
-        'cUISlider': app + 'ui/ui.slider',
-        'cUiAutoTextArea': app + 'ui/ui.autoTextArea' // autoSize
-    }
-
-});
-var arrayModule = [];
-require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUISwitch', 'cUIInputClear', 'cUiAutoTextArea', 'jMap', 'jSet'], function (cUIMask, cUIAlert, cUIToast, cUILoading, UIImageSlider, cUISwitch, cUIInputClear, cUiAutoTextArea, jMap, jSet) {
+﻿require(['./ui/ui.mask', './ui/ui.alert', './ui/ui.toast', './ui/ui.loading', './ui/ui.imageSlider', './ui/ui.switch', './ui/ui.input.clear','./common/map', './common/set', './common/ajax'], function (cUIMask, cUIAlert, cUIToast, cUILoading, UIImageSlider, cUISwitch, cUIInputClear,  jMap, jSet, ajax) {
+  window.jam = {
+    cUIMask: cUIMask,
+    cUIAlert: cUIAlert,
+    cUIToast: cUIToast,
+    cUILoading: cUILoading,
+    UIImageSlider: UIImageSlider,
+    cUISwitch: cUISwitch,
+    cUIInputClear: cUIInputClear,
+    jMap: jMap,
+    jSet: jSet,
+    ajax: ajax
+  }
+  console.log(ajax)
     const items = new jSet([1, 2, 3, 4, 5]);
     console.log(items)
     // console.log(items.keys())
@@ -119,10 +26,6 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUI
     sMap.set(1, 'bbb')
     sMap.set(['a'],222);
     console.log(sMap)
-    var autoSizeInput = new cUiAutoTextArea({
-        nodes: $('textarea')
-    });
-    console.log(autoSizeInput)
     var data = [
         { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },
         { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },
@@ -275,8 +178,8 @@ require(['cUIMask', 'cUIAlert', 'cUIToast', 'cUILoading', 'cUIImageSlider', 'cUI
         alert.show();
     })
 
-    // toast.hide(function () {
-    //     console.log(11312)
-    // });
+    toast.hide(function () {
+        console.log(11312)
+    });
 })
 // })();

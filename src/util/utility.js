@@ -1,4 +1,4 @@
-define(['cUtilityHash', 'cUtilityDate', 'cUtilityServertime', 'Validate'], function (UtilityHash, UtilityDate, UtilityServertime, Validate) {
+define(['./utility.hash', './utility.date', './utility.servertime', './validate'], function (UtilityHash, UtilityDate, UtilityServertime, Validate) {
     /**
     * @private
     * @method _toString
@@ -202,7 +202,7 @@ define(['cUtilityHash', 'cUtilityDate', 'cUtilityServertime', 'Validate'], funct
     /**
     * @description: 触发一个url
     * @param {string} url
-  
+
     */
     Util.tryUrl = function (url) {
         var iframe = document.createElement('iframe');

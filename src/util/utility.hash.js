@@ -1,7 +1,7 @@
 /**
  * @class Hash
  */
-define(['cCoreInherit'], function (cCoreInherit) {
+define(['../core/core.inherit'], function (cCoreInherit) {
 
     /**
     * @method indexOf

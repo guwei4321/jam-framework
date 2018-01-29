@@ -2,7 +2,7 @@
  * 图片幻灯片
  * @module ui/imageSlider
  */
-define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
+define(['../common/base', './ui.base'], function (cBase, UIBase) {
     "use strict";
     return new cBase.Class({
         __propertys__: function () {
@@ -187,7 +187,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._play();
         },
         //切换至上一张
-        pre: function () {          
+        pre: function () {
             if (this._changing) {
                 return;
             }
@@ -409,7 +409,7 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             if (this._imageCount <= 1) {
                 return;
             }
-            //清除自动播放    
+            //清除自动播放
             this._clearAutoPlay();
             //表示正在轮播图片
             this._changing = true;
@@ -458,14 +458,14 @@ define(['cBase', 'cUIBase', 'libs'], function (cBase, UIBase) {
             this._displayImage.node.css("left", initDisplayImageLeft);
             this._nextImage.node.css("left", initNextImageLeft).css("display", "");
 
-            this._nextImage.node.animate({ "left": offsetNextImageLeft }, 500, 'ease-out', $.proxy(function () {
+            this._nextImage.node.animate({ "left": offsetNextImageLeft }, 500, 'swing', $.proxy(function () {
                 this._changing = false;
                 this._changeCompeted();
                 this.rePlay();
             }, this));
 
             //使用zepto动画
-            this._displayImage.node.animate({ "left": offsetDisplayImageLeft }, 500, 'ease-out', $.proxy(function () {
+            this._displayImage.node.animate({ "left": offsetDisplayImageLeft }, 500, 'swing', $.proxy(function () {
                 this._displayImage.node.css("display", "none").css("left", 0);
                 this._displayImage = this._nextImage;
             }, this));

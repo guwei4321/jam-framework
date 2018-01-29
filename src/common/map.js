@@ -1,8 +1,7 @@
 /**
  * @description map
  */
-define(['libs', 'cBase'], function (libs, cBase) {
-    console.log()
+define(['./base'], function (cBase) {
     // 1.如果对同一个键多次赋值，后面的值将覆盖前面的值。
     // 2.如果读取一个未知的键，则返回undefined。
     // var map = typeof Map === "function" ? new Map() : (function () {

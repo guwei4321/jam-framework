@@ -2,7 +2,7 @@
 * @class juiAlter
 * @description 提供alter类弹出框
 */
-define(['libs', 'cBase', 'cUILayer'], function (libs, cBase, Layer) {
+define(['../common/base', './ui.layer'], function (cBase, Layer) {
 
     var _toString = Object.prototype.toString;
     var STYLE_CONFIRM = 'confirm';

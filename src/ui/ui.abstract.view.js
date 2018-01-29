@@ -1,7 +1,7 @@
 ﻿/**
 * @description 多数UI View的基类，提供基础方法，以及自建事件机制
 */
-define(['libs', 'cBase', 'cUIBase'], function (libs, cBase, uiBase) {
+define(['../common/base', './ui.base'], function (cBase, uiBase) {
 
     "use strict";
 

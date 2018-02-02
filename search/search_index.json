@@ -1,0 +1,299 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "\u7b80\u4ecb\n\n\njam-framework\n\u662f\u4e00\u4e2aPC\u7aefJS\u6846\u67b6\u3002\u79c9\u6301 \u201c\u5982\u679c\u6709\u5c0f\u800c\u7f8e\u7684\u8f6e\u5b50\uff0c\u5c31\u4e0d\u518d\u9020\u8f6e\u5b50\u201d \u5b97\u65e8\u5728\u4e0d\u65ad\u9020\u8f6e\u5b50\u3002\n\n\njam-framework\n\u9664\u4e86\u4f7f\u7528jQuery\u8fd9\u4e2a\u6bd4\u8f83\u5927\u7684DOM\u64cd\u4f5c\u5e93\uff0c\u5176\u4ed6\u90fd\u662f\njam-framework\n\u81ea\u5df1\u518d\u9020\u7684\u8f6e\u5b50\u3002\u4f7f\u7528\njQuery\n\u800c\u4e0d\u4f7f\u7528\nreact\n\uff0c\u662f\u4e3a\u4e86\u964d\u4f4e\u6846\u67b6\u4f7f\u7528\u95e8\u69db\uff0c\u8ba9\u540e\u7aef\u4eba\u5458\u4e5f\u80fd\u62ff\u6765\u5373\u7528\u3002\n\n\njam-framework\n \u4f7f\u7528\u4e86\u4ee5\u4e0b\u7b2c\u4e09\u65b9\u5e93\uff1a\n\n\n\n\n\u6a21\u5757\u5316\uff1ajam\u6846\u67b6\u5185\u90e8\u4f7f\u7528AMD\u89c4\u8303\uff0c\u4f7f\u7528\u4e86\nrequire.js \n\u3002\n\n\n\u6a21\u677f\uff1a \nmustache\n\uff0c\u867d\u7136\nmustache\n\u53ea\u80fd\u505a\u7b80\u5355\u7684\u56db\u5219\u8fd0\u7b97\u548cBoolen\u5224\u65ad\uff0c\u4f46\u662f\u5b83\u5c0f\u800c\u7cbe\u608d\u3002\n\n\nDOM\u64cd\u4f5c\uff1a \njQuery\n\uff0c\u540e\u7aef\u4eba\u5458\u4e5f\u5f88\u719f\u6089\u7684DOM\u64cd\u4f5c\u5e93\u3002\n\n\n\u5de5\u5177\u51fd\u6570\uff1a \nUnderscope\n\uff0c\u5f25\u8865\u6a21\u677f\u7684\u8fd0\u7b97\u7684\u4e0d\u8db3\u3002\n\n\n\n\n\u73b0\u5728\u5df2\u7ecf\u5b8c\u6210\u7684\u5206\u57fa\u7840\u7c7b\u8ddfUI\u7c7b\u7ec4\u4ef6\u4e24\u90e8\u5206\uff1a\n\n UI\u7ec4\u4ef6\uff1a\u6709\u56fe\u7247\u8f6e\u6362\u3001\u906e\u7f69\u5c42\u3001\u5f39\u51fa\u5c42\uff1b\n\n \u57fa\u7840\u7c7b\u7ec4\u4ef6\uff1aajax\u7b49\u8f6e\u5b50\u3002\n\n\n\u540e\u7eed\u4f1a\u4e0d\u65ad\u5b8c\u5584\u66f4\u65b0\u66f4\u597d\u7684\u5c0f\u8f6e\u5b50......\n\n\n\u6846\u67b6\u5185\u90e8\u4f7f\u7528\u4e86AMD\u89c4\u8303\uff0c\u4f46\u662f\u4f7f\u7528\njam-framework\n\u53ef\u4ee5\u4e0d\u7528\u5f15\u5165\nrequire.js\n\uff0c\u56e0\u4e3a\u6846\u67b6\u5185\u90e8\u5df2\u7ecf\u5c06\njam\n\u66b4\u9732\u5230\u5168\u5c40\u53d8\u91cf\uff0c\u6240\u4ee5\u5f15\u7528\njam.js\n\u4e4b\u540e\uff0c\u53ef\u4ee5\u76f4\u63a5\u4f7f\u7528\njam\n\u5bf9\u8c61\u5185\u7684\u7ec4\u4ef6\u3002\n\n\n\u4f7f\u7528\n\n\nnpm \u4e0b\u8f7d\n\n\nnpm install jam-framework\n\n\n\n\u9996\u5148\u5f15\u5165\u6837\u5f0f\n\n\n<link rel=\"stylesheet\" href=\"jam-framework/jam.css\">\n\n\n\n\u7136\u540e\u5f15\u5165Js\u6587\u4ef6\n\n\n<script src=\"jam-framework/jam.js\"></script>\n\n\n\n\u6700\u540e\uff0c\u4f60\u53ea\u9700\u8981\u50cf\u4e0b\u9762\u90a3\u6837\u5c06\u7c7b\u5b9e\u4f8b\u5316\u51fa\u6765\u5c31\u53ef\u4ee5\u4e86\n\n\n//  alert\u5b9e\u4f8b\u5316\nvar alert = new jam.cUIAlert({\n    showTitle: true,\n    title: '\u5934\u90e8',\n    message: '\u5185\u5bb9',\n    needMask: true,\n    needMaskHide: true,\n    disableScroll: false,\n    buttons: [\n        {\n            text: '\u4f60\u786e\u5b9a?',\n            click: function () {\n                this.hide();\n            }\n        },\n        {\n            type: 'cancel',\n            text: '\u53d6\u6d88!',\n            click: function () {\n                this.hide();\n            }\n        }\n    ]\n});\n// show\u5b9e\u4f8b\u5316\u51fa\u6765\u7684 alert \nalert.show();\n\n\n\n\u6846\u67b6\u57fa\u7840\u7c7b\u8bf4\u660e\n\n\n\u6846\u67b6\u5185\u7684\u7ec4\u4ef6\u7684\nClass\n\u7c7b\uff0c\u90fd\u662f\u901a\u8fc7\u6784\u9020\u51fd\u6570\u4ee5\u53ca\u901a\u8fc7\u539f\u578b\u94fe\u6a21\u62df\u7684\uff0c\u800c\u5f88\u591a\u7ec4\u4ef6\u4e5f\u662f\u901a\u8fc7\nClass\n\u6765\u7ee7\u627f\u7684\u3002",
+            "title": "Home"
+        },
+        {
+            "location": "/#_1",
+            "text": "jam-framework \u662f\u4e00\u4e2aPC\u7aefJS\u6846\u67b6\u3002\u79c9\u6301 \u201c\u5982\u679c\u6709\u5c0f\u800c\u7f8e\u7684\u8f6e\u5b50\uff0c\u5c31\u4e0d\u518d\u9020\u8f6e\u5b50\u201d \u5b97\u65e8\u5728\u4e0d\u65ad\u9020\u8f6e\u5b50\u3002  jam-framework \u9664\u4e86\u4f7f\u7528jQuery\u8fd9\u4e2a\u6bd4\u8f83\u5927\u7684DOM\u64cd\u4f5c\u5e93\uff0c\u5176\u4ed6\u90fd\u662f jam-framework \u81ea\u5df1\u518d\u9020\u7684\u8f6e\u5b50\u3002\u4f7f\u7528 jQuery \u800c\u4e0d\u4f7f\u7528 react \uff0c\u662f\u4e3a\u4e86\u964d\u4f4e\u6846\u67b6\u4f7f\u7528\u95e8\u69db\uff0c\u8ba9\u540e\u7aef\u4eba\u5458\u4e5f\u80fd\u62ff\u6765\u5373\u7528\u3002  jam-framework  \u4f7f\u7528\u4e86\u4ee5\u4e0b\u7b2c\u4e09\u65b9\u5e93\uff1a   \u6a21\u5757\u5316\uff1ajam\u6846\u67b6\u5185\u90e8\u4f7f\u7528AMD\u89c4\u8303\uff0c\u4f7f\u7528\u4e86 require.js  \u3002  \u6a21\u677f\uff1a  mustache \uff0c\u867d\u7136 mustache \u53ea\u80fd\u505a\u7b80\u5355\u7684\u56db\u5219\u8fd0\u7b97\u548cBoolen\u5224\u65ad\uff0c\u4f46\u662f\u5b83\u5c0f\u800c\u7cbe\u608d\u3002  DOM\u64cd\u4f5c\uff1a  jQuery \uff0c\u540e\u7aef\u4eba\u5458\u4e5f\u5f88\u719f\u6089\u7684DOM\u64cd\u4f5c\u5e93\u3002  \u5de5\u5177\u51fd\u6570\uff1a  Underscope \uff0c\u5f25\u8865\u6a21\u677f\u7684\u8fd0\u7b97\u7684\u4e0d\u8db3\u3002   \u73b0\u5728\u5df2\u7ecf\u5b8c\u6210\u7684\u5206\u57fa\u7840\u7c7b\u8ddfUI\u7c7b\u7ec4\u4ef6\u4e24\u90e8\u5206\uff1a  UI\u7ec4\u4ef6\uff1a\u6709\u56fe\u7247\u8f6e\u6362\u3001\u906e\u7f69\u5c42\u3001\u5f39\u51fa\u5c42\uff1b  \u57fa\u7840\u7c7b\u7ec4\u4ef6\uff1aajax\u7b49\u8f6e\u5b50\u3002  \u540e\u7eed\u4f1a\u4e0d\u65ad\u5b8c\u5584\u66f4\u65b0\u66f4\u597d\u7684\u5c0f\u8f6e\u5b50......  \u6846\u67b6\u5185\u90e8\u4f7f\u7528\u4e86AMD\u89c4\u8303\uff0c\u4f46\u662f\u4f7f\u7528 jam-framework \u53ef\u4ee5\u4e0d\u7528\u5f15\u5165 require.js \uff0c\u56e0\u4e3a\u6846\u67b6\u5185\u90e8\u5df2\u7ecf\u5c06 jam \u66b4\u9732\u5230\u5168\u5c40\u53d8\u91cf\uff0c\u6240\u4ee5\u5f15\u7528 jam.js \u4e4b\u540e\uff0c\u53ef\u4ee5\u76f4\u63a5\u4f7f\u7528 jam \u5bf9\u8c61\u5185\u7684\u7ec4\u4ef6\u3002",
+            "title": "\u7b80\u4ecb"
+        },
+        {
+            "location": "/#_2",
+            "text": "npm \u4e0b\u8f7d  npm install jam-framework  \u9996\u5148\u5f15\u5165\u6837\u5f0f  <link rel=\"stylesheet\" href=\"jam-framework/jam.css\">  \u7136\u540e\u5f15\u5165Js\u6587\u4ef6  <script src=\"jam-framework/jam.js\"></script>  \u6700\u540e\uff0c\u4f60\u53ea\u9700\u8981\u50cf\u4e0b\u9762\u90a3\u6837\u5c06\u7c7b\u5b9e\u4f8b\u5316\u51fa\u6765\u5c31\u53ef\u4ee5\u4e86  //  alert\u5b9e\u4f8b\u5316\nvar alert = new jam.cUIAlert({\n    showTitle: true,\n    title: '\u5934\u90e8',\n    message: '\u5185\u5bb9',\n    needMask: true,\n    needMaskHide: true,\n    disableScroll: false,\n    buttons: [\n        {\n            text: '\u4f60\u786e\u5b9a?',\n            click: function () {\n                this.hide();\n            }\n        },\n        {\n            type: 'cancel',\n            text: '\u53d6\u6d88!',\n            click: function () {\n                this.hide();\n            }\n        }\n    ]\n});\n// show\u5b9e\u4f8b\u5316\u51fa\u6765\u7684 alert \nalert.show();",
+            "title": "\u4f7f\u7528"
+        },
+        {
+            "location": "/#_3",
+            "text": "\u6846\u67b6\u5185\u7684\u7ec4\u4ef6\u7684 Class \u7c7b\uff0c\u90fd\u662f\u901a\u8fc7\u6784\u9020\u51fd\u6570\u4ee5\u53ca\u901a\u8fc7\u539f\u578b\u94fe\u6a21\u62df\u7684\uff0c\u800c\u5f88\u591a\u7ec4\u4ef6\u4e5f\u662f\u901a\u8fc7 Class \u6765\u7ee7\u627f\u7684\u3002",
+            "title": "\u6846\u67b6\u57fa\u7840\u7c7b\u8bf4\u660e"
+        },
+        {
+            "location": "/api/ajax/",
+            "text": "\u517c\u5bb9\u5404\u4e2a\u6d4f\u89c8\u5668\u7684ajax\u65b9\u6cd5\uff0c\u56e0\u4e3a\u57fa\u672c\u7684ajax\u65b9\u6cd5\u4f7f\u7528\u4e86jquery\u7684ajax\uff0c\u6240\u4ee5\u4f9d\u8d56\u4f9d\u8d56\n\n\nget\u65b9\u6cd5\n\n\nAJAX GET\u65b9\u5f0f\u8bbf\u95ee\u63a5\u53e3\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\njam.ajax.get({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})\n\n\n\n\n\n\n\n\n\n\u53c2\u6570\u540d\n\n\n\u8bf4\u660e\n\n\n\n\n\n\n\n\n\n\nurl\n\n\n\u8bf7\u6c42\u5730\u5740\n\n\n\n\n\n\ndata\n\n\n\u8bf7\u6c42\u6570\u636e\n\n\n\n\n\n\ncallback\n\n\n\u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03\n\n\n\n\n\n\nerror\n\n\n\u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03\n\n\n\n\n\n\n\n\npost\u65b9\u6cd5\n\n\nAJAX POST\u65b9\u5f0f\u8bbf\u95ee\u63a5\u53e3\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\njam.ajax.post({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})\n\n\n\n\n\n\n\n\n\n\u53c2\u6570\u540d\n\n\n\u8bf4\u660e\n\n\n\n\n\n\n\n\n\n\nurl\n\n\n\u8bf7\u6c42\u5730\u5740\n\n\n\n\n\n\ndata\n\n\n\u8bf7\u6c42\u6570\u636e\n\n\n\n\n\n\ncallback\n\n\n\u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03\n\n\n\n\n\n\nerror\n\n\n\u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03\n\n\n\n\n\n\n\n\njsonp\u65b9\u6cd5\n\n\n\u4ee5GET\u65b9\u5f0f\u8de8\u57df\u8bbf\u95ee\u5916\u90e8\u63a5\u53e3\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\njam.ajax.jsonp({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})\n\n\n\n\n\n\n\n\n\n\u53c2\u6570\u540d\n\n\n\u8bf4\u660e\n\n\n\n\n\n\n\n\n\n\nurl\n\n\n\u8bf7\u6c42\u5730\u5740\n\n\n\n\n\n\ndata\n\n\n\u8bf7\u6c42\u6570\u636e\n\n\n\n\n\n\ncallback\n\n\n\u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03\n\n\n\n\n\n\nerror\n\n\n\u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03\n\n\n\n\n\n\n\n\ncros\u65b9\u6cd5\n\n\n\u4ee5POST\u65b9\u6cd5\u8de8\u57df\u8bbf\u95ee\u5916\u90e8\u63a5\u53e3\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\njam.ajax.cros({\n    url: '',\n    data: {...},\n    type: 'get',\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})\n\n\n\n\n\n\n\n\n\n\u53c2\u6570\u540d\n\n\n\u8bf4\u660e\n\n\n\n\n\n\n\n\n\n\nurl\n\n\n\u8bf7\u6c42\u5730\u5740\n\n\n\n\n\n\ntype\n\n\n\u8bf7\u6c42\u65b9\u5f0f\n\n\n\n\n\n\ndata\n\n\n\u8bf7\u6c42\u6570\u636e\n\n\n\n\n\n\ncallback\n\n\n\u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03\n\n\n\n\n\n\nerror\n\n\n\u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03\n\n\n\n\n\n\n\n\nform\u65b9\u6cd5\n\n\nAJAX \u63d0\u4ea4\u8868\u5355,\u4e0d\u80fd\u8de8\u57df\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\njam.ajax.form({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})\n\n\n\n\n\n\n\n\n\n\u53c2\u6570\u540d\n\n\n\u8bf4\u660e\n\n\n\n\n\n\n\n\n\n\nurl\n\n\n\u8bf7\u6c42\u5730\u5740\n\n\n\n\n\n\nform\n\n\n\u53ef\u4ee5\u662fdom\u5bf9\u8c61\uff0cdom id \u6216\u8005jquery \u5bf9\u8c61\n\n\n\n\n\n\ncallback\n\n\n\u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03\n\n\n\n\n\n\nerror\n\n\n\u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
+            "title": "Ajax"
+        },
+        {
+            "location": "/api/ajax/#get",
+            "text": "AJAX GET\u65b9\u5f0f\u8bbf\u95ee\u63a5\u53e3",
+            "title": "get\u65b9\u6cd5"
+        },
+        {
+            "location": "/api/ajax/#_1",
+            "text": "jam.ajax.get({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/api/ajax/#post",
+            "text": "AJAX POST\u65b9\u5f0f\u8bbf\u95ee\u63a5\u53e3",
+            "title": "post\u65b9\u6cd5"
+        },
+        {
+            "location": "/api/ajax/#_2",
+            "text": "jam.ajax.post({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/api/ajax/#jsonp",
+            "text": "\u4ee5GET\u65b9\u5f0f\u8de8\u57df\u8bbf\u95ee\u5916\u90e8\u63a5\u53e3",
+            "title": "jsonp\u65b9\u6cd5"
+        },
+        {
+            "location": "/api/ajax/#_3",
+            "text": "jam.ajax.jsonp({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/api/ajax/#cros",
+            "text": "\u4ee5POST\u65b9\u6cd5\u8de8\u57df\u8bbf\u95ee\u5916\u90e8\u63a5\u53e3",
+            "title": "cros\u65b9\u6cd5"
+        },
+        {
+            "location": "/api/ajax/#_4",
+            "text": "jam.ajax.cros({\n    url: '',\n    data: {...},\n    type: 'get',\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    type  \u8bf7\u6c42\u65b9\u5f0f    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/api/ajax/#form",
+            "text": "AJAX \u63d0\u4ea4\u8868\u5355,\u4e0d\u80fd\u8de8\u57df",
+            "title": "form\u65b9\u6cd5"
+        },
+        {
+            "location": "/api/ajax/#_5",
+            "text": "jam.ajax.form({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    form  \u53ef\u4ee5\u662fdom\u5bf9\u8c61\uff0cdom id \u6216\u8005jquery \u5bf9\u8c61    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/api/map/",
+            "text": "\u6a21\u62df es6 map \u6570\u636e\u7ed3\u6784\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nvar sMap = new jam.jMap([ // \u5b9e\u4f8b\u5316\n    ['name', '\u5f20\u4e09'],\n    ['title', 'Author']\n]);\n\nsMap.set(1, 'aaa') // \u5f80\u91cc\u9762\u585e\u5143\u7d20\nsMap.set(1, 'bbb')\nsMap.set(['a'],222);\n\n\n\nAPI\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nhas\n\n\n\u8fd4\u56de\u4e00\u4e2a\u5e03\u5c14\u503c\n\n\nkey\n\n\n\n\n\n\n\n\nget\n\n\n\u8fd4\u56de\u952e\u5bf9\u5e94\u7684\u503c\n\n\nkey\n\n\n\n\n\n\n\n\nset\n\n\n\u8bbe\u7f6e\u5bf9\u8c61\u4e2d\u952e\u7684\u503c\u3002\n\n\nkey, value\n\n\n\n\n\n\n\n\ndelete\n\n\n\u79fb\u9664\u4e0e\u952e\u76f8\u5173\u8054\u7684\u503c\n\n\nkey\n\n\n\n\n\n\n\n\nclear\n\n\n\u6e05\u7a7a",
+            "title": "Map"
+        },
+        {
+            "location": "/api/map/#_1",
+            "text": "var sMap = new jam.jMap([ // \u5b9e\u4f8b\u5316\n    ['name', '\u5f20\u4e09'],\n    ['title', 'Author']\n]);\n\nsMap.set(1, 'aaa') // \u5f80\u91cc\u9762\u585e\u5143\u7d20\nsMap.set(1, 'bbb')\nsMap.set(['a'],222);",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/api/map/#api",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      has  \u8fd4\u56de\u4e00\u4e2a\u5e03\u5c14\u503c  key     get  \u8fd4\u56de\u952e\u5bf9\u5e94\u7684\u503c  key     set  \u8bbe\u7f6e\u5bf9\u8c61\u4e2d\u952e\u7684\u503c\u3002  key, value     delete  \u79fb\u9664\u4e0e\u952e\u76f8\u5173\u8054\u7684\u503c  key     clear  \u6e05\u7a7a",
+            "title": "API"
+        },
+        {
+            "location": "/api/set/",
+            "text": "\u6a21\u62df es6 set \u6570\u636e\u7ed3\u6784\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nvar items = new jam.jSet([1, 2, 3, 4, 5]);\nitems.add(2);\n\n\n\nAPI\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nhas\n\n\n\u8fd4\u56de\u4e00\u4e2a\u5e03\u5c14\u503c\uff0c\u8868\u793a\u8be5\u503c\u5b58\u5728\u4e0e\u5426\u3002\n\n\nvalue\n\n\n\n\n\n\n\n\nadd\n\n\n\u5728Set\u5bf9\u8c61\u5c3e\u90e8\u6dfb\u52a0\u4e00\u4e2a\u5143\u7d20\u3002\u8fd4\u56de\u8be5\u5bf9\u8c61\u3002\n\n\nvalue\n\n\n\n\n\n\n\n\ndelete\n\n\n\u79fb\u9664Set\u7684\u4e2d\u4e0e\u8fd9\u4e2akey\u5bf9\u5e94\u7684\n\n\nvalue\n\n\n\n\n\n\n\n\nclear\n\n\n\u6e05\u7a7a\u6539\u5bf9\u8c61",
+            "title": "Set"
+        },
+        {
+            "location": "/api/set/#_1",
+            "text": "var items = new jam.jSet([1, 2, 3, 4, 5]);\nitems.add(2);",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/api/set/#api",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      has  \u8fd4\u56de\u4e00\u4e2a\u5e03\u5c14\u503c\uff0c\u8868\u793a\u8be5\u503c\u5b58\u5728\u4e0e\u5426\u3002  value     add  \u5728Set\u5bf9\u8c61\u5c3e\u90e8\u6dfb\u52a0\u4e00\u4e2a\u5143\u7d20\u3002\u8fd4\u56de\u8be5\u5bf9\u8c61\u3002  value     delete  \u79fb\u9664Set\u7684\u4e2d\u4e0e\u8fd9\u4e2akey\u5bf9\u5e94\u7684  value     clear  \u6e05\u7a7a\u6539\u5bf9\u8c61",
+            "title": "API"
+        },
+        {
+            "location": "/components/alert/",
+            "text": "alert\u7ec4\u4ef6\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nvar alert = new jam.cUIAlert({\n    showTitle: true,\n    title: '\u5934\u90e8',\n    message: '\u5185\u5bb9',\n    needMask: true,\n    needMaskHide: true,\n    disableScroll: false,\n    buttons: [\n        {\n            text: '\u4f60\u786e\u5b9a?',\n            click: function () {\n                this.hide();\n            }\n        },\n        {\n            type: 'cancel',\n            text: '\u53d6\u6d88!',\n            click: function () {\n                this.hide();\n            }\n        }\n    ]\n});\n$('#button1').on('click', function () {\n    alert.show();\n})\n\n\n\n\u4ee3\u7801\u6f14\u793a\n\n\n\u6253\u5f00alert\n\n\n\n     var alert = new jam.cUIAlert({\n        showTitle: true,\n        title: '\u5934\u90e8',\n        message: '\u5185\u5bb9',\n        needMask: true,\n        needMaskHide: true,\n        disableScroll: false,\n        buttons: [\n            {\n                text: '\u4f60\u786e\u5b9a?',\n                click: function () {\n                    this.hide();\n                }\n            },\n            {\n                type: 'cancel',\n                text: '\u53d6\u6d88!',\n                click: function () {\n                    this.hide();\n                }\n            }\n        ]\n    });\n     $('#button1').on('click', function () {\n        alert.show();\n    })\n\n\n\nAPI\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\ntitle\n\n\n\u5934\u90e8\n\n\nstring\n\n\n''\n\n\n\n\n\n\nmessage\n\n\n\u5185\u5bb9\n\n\nstring\n\n\n''\n\n\n\n\n\n\nneedMask\n\n\n\u662f\u5426\u9700\u8981\u8499\u7248\n\n\nbool\n\n\nfalse\n\n\n\n\n\n\nneedMaskHide\n\n\n\u662f\u5426\u9700\u8981\u70b9\u51fb\u8499\u7248\u5220\u9664\n\n\nbool\n\n\nfalse\n\n\n\n\n\n\ntitle\n\n\n\u63d0\u793a\u6587\u5b57\n\n\nString\n\n\n'\u60a8\u597d\uff01'\n\n\n\n\n\n\nsleep\n\n\n\u6301\u7eed\u65f6\u95f4\n\n\nnumber\n\n\n\n\n\n\n\n\nprefix\n\n\n\u524d\u7f00\n\n\nString\n\n\n'jui'\n\n\n\n\n\n\ndisableScroll\n\n\n\u9f20\u6807\u6eda\u8f6e\u662f\u5426\u53ef\u4ee5\u6eda\u52a8\n\n\nbool\n\n\nfalse\n\n\n\n\n\n\nbuttons\n\n\n\u6309\u94ae\n\n\narray\n\n\n[{ text: '\u786e\u5b9a', type: 'confirm', click: function () { this.hide(); } }]alert\u6309\u94ae\n\n\n\n\n\n\n\n\n\u5b9e\u4f8b\u65b9\u6cd5\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nshow\n\n\n\u663e\u793a",
+            "title": "Alert"
+        },
+        {
+            "location": "/components/alert/#_1",
+            "text": "var alert = new jam.cUIAlert({\n    showTitle: true,\n    title: '\u5934\u90e8',\n    message: '\u5185\u5bb9',\n    needMask: true,\n    needMaskHide: true,\n    disableScroll: false,\n    buttons: [\n        {\n            text: '\u4f60\u786e\u5b9a?',\n            click: function () {\n                this.hide();\n            }\n        },\n        {\n            type: 'cancel',\n            text: '\u53d6\u6d88!',\n            click: function () {\n                this.hide();\n            }\n        }\n    ]\n});\n$('#button1').on('click', function () {\n    alert.show();\n})",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/components/alert/#_2",
+            "text": "\u6253\u5f00alert  \n     var alert = new jam.cUIAlert({\n        showTitle: true,\n        title: '\u5934\u90e8',\n        message: '\u5185\u5bb9',\n        needMask: true,\n        needMaskHide: true,\n        disableScroll: false,\n        buttons: [\n            {\n                text: '\u4f60\u786e\u5b9a?',\n                click: function () {\n                    this.hide();\n                }\n            },\n            {\n                type: 'cancel',\n                text: '\u53d6\u6d88!',\n                click: function () {\n                    this.hide();\n                }\n            }\n        ]\n    });\n     $('#button1').on('click', function () {\n        alert.show();\n    })",
+            "title": "\u4ee3\u7801\u6f14\u793a"
+        },
+        {
+            "location": "/components/alert/#api",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      title  \u5934\u90e8  string  ''    message  \u5185\u5bb9  string  ''    needMask  \u662f\u5426\u9700\u8981\u8499\u7248  bool  false    needMaskHide  \u662f\u5426\u9700\u8981\u70b9\u51fb\u8499\u7248\u5220\u9664  bool  false    title  \u63d0\u793a\u6587\u5b57  String  '\u60a8\u597d\uff01'    sleep  \u6301\u7eed\u65f6\u95f4  number     prefix  \u524d\u7f00  String  'jui'    disableScroll  \u9f20\u6807\u6eda\u8f6e\u662f\u5426\u53ef\u4ee5\u6eda\u52a8  bool  false    buttons  \u6309\u94ae  array  [{ text: '\u786e\u5b9a', type: 'confirm', click: function () { this.hide(); } }]alert\u6309\u94ae",
+            "title": "API"
+        },
+        {
+            "location": "/components/alert/#_3",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      show  \u663e\u793a",
+            "title": "\u5b9e\u4f8b\u65b9\u6cd5"
+        },
+        {
+            "location": "/components/inputClose/",
+            "text": ".clear-input-box input[type=\"text\"] {\n        background-color: transparent;\n        box-shadow: none;\n    }\n\n\n\u5e26\u5173\u95ed\u6309\u94ae\u7684input\u6846\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nnew jam.cUIInputClear($('.input-text'));\n\n\n\n\u4ee3\u7801\u6f14\u793a\n\n\n\n\n\n\n\n    new jam.cUIInputClear($('.input-text'));\n\n\n\nAPI\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\ninput\n\n\n\u9700\u8981\u5e26close\u7684input\n\n\n\n\n\n\n\n\n\n\nclearClass\n\n\nclear\u7684\u7c7b\u540d\n\n\n\n\n\n\n\n\n\n\nclearCallback\n\n\n\u70b9\u51fb\u5173\u95ed\u4e4b\u540e\u7684\u56de\u8c03\n\n\n\n\n\n\n\n\n\n\noffset\n\n\nclose\u56fe\u6807\u7684\u4f4d\u7f6e\n\n\n{left:0,top:0}\n\n\n\n\n\n\n\n\n\n\n\u5b9e\u4f8b\u65b9\u6cd5\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nshow\n\n\n\u663e\u793a",
+            "title": "inputClose"
+        },
+        {
+            "location": "/components/inputClose/#_1",
+            "text": "new jam.cUIInputClear($('.input-text'));",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/components/inputClose/#_2",
+            "text": "new jam.cUIInputClear($('.input-text'));",
+            "title": "\u4ee3\u7801\u6f14\u793a"
+        },
+        {
+            "location": "/components/inputClose/#api",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      input  \u9700\u8981\u5e26close\u7684input      clearClass  clear\u7684\u7c7b\u540d      clearCallback  \u70b9\u51fb\u5173\u95ed\u4e4b\u540e\u7684\u56de\u8c03      offset  close\u56fe\u6807\u7684\u4f4d\u7f6e  {left:0,top:0}",
+            "title": "API"
+        },
+        {
+            "location": "/components/inputClose/#_3",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      show  \u663e\u793a",
+            "title": "\u5b9e\u4f8b\u65b9\u6cd5"
+        },
+        {
+            "location": "/components/loading/",
+            "text": "loading \u7ec4\u4ef6\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nvar loading = new jam.cUILoading({\n    rootBox : $('#loading-wrap'),\n    backgroundColor: 'rgba(0, 255, 153, .6)'\n})\n$('#button0').on('click', function(){\n    loading.show(function () {\n        console.log('show') // show\u4e8b\u4ef6 \u56de\u8c03\n    });\n})\n\n\n\n\u4ee3\u7801\u6f14\u793a\n\n\n\n\nloading\u6309\u94ae\n\n\n\n    var loading = new jam.cUILoading({\n        rootBox : $('#loading-wrap'),\n        backgroundColor: 'rgba(0, 255, 153, .6)'\n    })\n    $('#button0').on('click', function(){\n        loading.show(function () {\n            console.log('show')\n        });\n    })\n\n\n\n\nAPI\n\n\n\n\n\n\n\n\n\u53c2\u6570\n\n\n\u8bf4\u660e\n\n\n\u7c7b\u578b\n\n\n\u9ed8\u8ba4\u503c\n\n\n\n\n\n\n\n\n\n\nneedMaskHide\n\n\n\u662f\u5426\u9700\u8981\u70b9\u51fb\u8499\u7248\u5220\u9664\n\n\nbool\n\n\nfalse\n\n\n\n\n\n\nloadHtml\n\n\nloading\u5185\u5bb9\n\n\n\n\n\n\n\n\n\n\nsleep\n\n\n\u6301\u7eed\u65f6\u95f4\n\n\nnumber\n\n\n\n\n\n\n\n\nprefix\n\n\n\u524d\u7f00\n\n\nstring\n\n\njui\n\n\n\n\n\n\n\n\n\u5b9e\u4f8b\u65b9\u6cd5\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nshow\n\n\n\u663e\u793a\n\n\n\n\n\n\n\n\n\n\nhide\n\n\n\u5173\u95ed",
+            "title": "Loading"
+        },
+        {
+            "location": "/components/loading/#_1",
+            "text": "var loading = new jam.cUILoading({\n    rootBox : $('#loading-wrap'),\n    backgroundColor: 'rgba(0, 255, 153, .6)'\n})\n$('#button0').on('click', function(){\n    loading.show(function () {\n        console.log('show') // show\u4e8b\u4ef6 \u56de\u8c03\n    });\n})",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/components/loading/#_2",
+            "text": "loading\u6309\u94ae  \n    var loading = new jam.cUILoading({\n        rootBox : $('#loading-wrap'),\n        backgroundColor: 'rgba(0, 255, 153, .6)'\n    })\n    $('#button0').on('click', function(){\n        loading.show(function () {\n            console.log('show')\n        });\n    })",
+            "title": "\u4ee3\u7801\u6f14\u793a"
+        },
+        {
+            "location": "/components/loading/#api",
+            "text": "\u53c2\u6570  \u8bf4\u660e  \u7c7b\u578b  \u9ed8\u8ba4\u503c      needMaskHide  \u662f\u5426\u9700\u8981\u70b9\u51fb\u8499\u7248\u5220\u9664  bool  false    loadHtml  loading\u5185\u5bb9      sleep  \u6301\u7eed\u65f6\u95f4  number     prefix  \u524d\u7f00  string  jui",
+            "title": "API"
+        },
+        {
+            "location": "/components/loading/#_3",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      show  \u663e\u793a      hide  \u5173\u95ed",
+            "title": "\u5b9e\u4f8b\u65b9\u6cd5"
+        },
+        {
+            "location": "/components/mask/",
+            "text": "\u906e\u7f69\u5c42\u7ec4\u4ef6\n\n\n\u906e\u7f69\u5c42\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nvar mask = new jam.cUIMask({\n    rootBox: $('#JMaskWrap')\n});\nmask.show();\n\n\n\n\u4ee3\u7801\u6f14\u793a\n\n\n\n\n\u5c40\u90e8\u906e\u7f69\n\n\n\u5168\u5c40\u906e\u7f69\n\n\n\n    var mask = new jam.cUIMask({\n        rootBox: $('#JMaskWrap')\n    });\n    $('#btn-mask').on('click', function(){\n        mask.show(); \n    })\n    var mask2 = new jam.cUIMask({\n    });\n    $('#btn-mask2').on('click', function(){\n        mask2.show(); \n    })\n\n\n\n\nAPI\n\n\n\n\n\n\n\n\n\u53c2\u6570\n\n\n\u8bf4\u660e\n\n\n\u7c7b\u578b\n\n\n\u9ed8\u8ba4\u503c\n\n\n\n\n\n\n\n\n\n\nneedMaskHide\n\n\n\u662f\u5426\u9700\u8981\u70b9\u51fb\u8499\u7248\u5220\u9664\n\n\nbool\n\n\nfalse\n\n\n\n\n\n\nloadHtml\n\n\nloading\u5185\u5bb9\n\n\n\n\n\n\n\n\n\n\nsleep\n\n\n\u6301\u7eed\u65f6\u95f4\n\n\nnumber\n\n\n\n\n\n\n\n\nprefix\n\n\n\u524d\u7f00\n\n\nstring\n\n\njui\n\n\n\n\n\n\n\n\n\u5b9e\u4f8b\u65b9\u6cd5\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nshow\n\n\n\u663e\u793a\n\n\n\n\n\n\n\n\n\n\nhide\n\n\n\u5173\u95ed",
+            "title": "Mask"
+        },
+        {
+            "location": "/components/mask/#_1",
+            "text": "\u906e\u7f69\u5c42",
+            "title": "\u906e\u7f69\u5c42\u7ec4\u4ef6"
+        },
+        {
+            "location": "/components/mask/#_2",
+            "text": "var mask = new jam.cUIMask({\n    rootBox: $('#JMaskWrap')\n});\nmask.show();",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/components/mask/#_3",
+            "text": "\u5c40\u90e8\u906e\u7f69  \u5168\u5c40\u906e\u7f69  \n    var mask = new jam.cUIMask({\n        rootBox: $('#JMaskWrap')\n    });\n    $('#btn-mask').on('click', function(){\n        mask.show(); \n    })\n    var mask2 = new jam.cUIMask({\n    });\n    $('#btn-mask2').on('click', function(){\n        mask2.show(); \n    })",
+            "title": "\u4ee3\u7801\u6f14\u793a"
+        },
+        {
+            "location": "/components/mask/#api",
+            "text": "\u53c2\u6570  \u8bf4\u660e  \u7c7b\u578b  \u9ed8\u8ba4\u503c      needMaskHide  \u662f\u5426\u9700\u8981\u70b9\u51fb\u8499\u7248\u5220\u9664  bool  false    loadHtml  loading\u5185\u5bb9      sleep  \u6301\u7eed\u65f6\u95f4  number     prefix  \u524d\u7f00  string  jui",
+            "title": "API"
+        },
+        {
+            "location": "/components/mask/#_4",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      show  \u663e\u793a      hide  \u5173\u95ed",
+            "title": "\u5b9e\u4f8b\u65b9\u6cd5"
+        },
+        {
+            "location": "/components/slider/",
+            "text": ".sliderWrap {\n        position: relative;\n        height: 202px;\n        width: 360px;\n        margin: 0 auto;\n    }\n    .sliderWrap img {\n        display: block;\n        width: 360px !important;\n        max-width: 360px !important;\n        height: 202px !important;\n    }\n\n\n\n\n\u8f6e\u64ad\u7ec4\u4ef6\n\n\n\u4e3b\u8981\u7528\u4e8e\u56fe\u7247\u4ee5\u53ca\u6587\u5b57\u7684\u8f6e\u64ad\u7ec4\u4ef6 \n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nvar data = [\n    { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },\n    { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },\n    { id: 3, src: 'imagesDEMO/slider-3.jpg', href: './res/img/3.jpg' },\n    { id: 4, src: 'imagesDEMO/slider-4.jpg', href: './res/img/4.jpg' }\n];\nvar imgSlider02 = new jam.UIImageSlider({\n    images: data,\n    autoPlay: true,\n    loop: true,\n    imageSize: {\n        width: '360px',\n        height: '202px'\n    },\n    showArrows: true,\n    showNav: true,\n    container: $('.sliderWrap')\n});\nimgSlider02.play();\n\n\n\n\u4ee3\u7801\u6f14\u793a\n\n\n\n\n\u57fa\u7840\u7528\u6cd5\n\n\nvar data = [\n    { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },\n    { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },\n    { id: 3, src: 'imagesDEMO/slider-3.jpg', href: './res/img/3.jpg' },\n    { id: 4, src: 'imagesDEMO/slider-4.jpg', href: './res/img/4.jpg' }\n];\nvar imgSlider02 = new jam.UIImageSlider({\n    images: data,\n    autoPlay: true,\n    loop: true,\n    imageSize: {\n        width: '360px',\n        height: '202px'\n    },\n    showArrows: true,\n    showNav: true,\n    container: $('.sliderWrap')\n});\nimgSlider02.play();\n\n\n\n\n    var data = [\n        { id: 1, src: '/imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },\n        { id: 2, src: '/imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },\n        { id: 3, src: '/imagesDEMO/slider-3.jpg', href: './res/img/3.jpg' },\n        { id: 4, src: '/imagesDEMO/slider-4.jpg', href: './res/img/4.jpg' }\n    ];\n    var imgSlider02 = new jam.UIImageSlider({\n        images: data,\n        autoPlay: true,\n        loop: true,\n        imageSize: {\n            width: '360px',\n            height: '202px'\n        },\n        showArrows: true,\n        showNav: true,\n        container: $('.sliderWrap')\n    });\n    imgSlider02.play();\n\n\n\nAPI\n\n\n\n\n\n\n\n\n\u53c2\u6570\n\n\n\u8bf4\u660e\n\n\n\u7c7b\u578b\n\n\n\u9ed8\u8ba4\u503c\n\n\n\n\n\n\n\n\n\n\nimages\n\n\n\u7528\u4e8e\u8bbe\u7f6e\u5185\u5bb9\uff08\u56fe\u7247\u3001\u6587\u5b57\uff09\n\n\narray\n\n\n\n\n\n\n\n\nautoPlay\n\n\n\u81ea\u52a8\u64ad\u653e\n\n\nbool\n\n\ntrue\n\n\n\n\n\n\ndelay\n\n\n\u81ea\u52a8\u64ad\u653e\u5ef6\u8fdf(\u5355\u4f4d\uff1a\u79d2)\n\n\nnumber\n\n\n3\n\n\n\n\n\n\ndir\n\n\n\u8f6e\u64ad\u65b9\u5411\n\n\n'LEFT'\u6216'RIGHT'\n\n\nLEFT\n\n\n\n\n\n\nerrorImageUrl\n\n\n\u56fe\u7247\u52a0\u8f7d \u5931\u8d25/\u9519\u8bef \u540e\u663e\u793a\u7684\u56fe\u7247\n\n\n\n\n\n\n\n\n\n\nloadImageUrl\n\n\n\u56fe\u7247\u52a0\u8f7d\u4e2d\u663e\u793a\u7684\u56fe\u7247\n\n\n\n\n\n\n\n\n\n\nindex\n\n\n\u5f53\u524d\u7684\u7d22\u5f15\n\n\n\n\n\n\n\n\n\n\nonChanged\n\n\n\u8f6e\u64ad\u7ed3\u675f\u65f6\u7684\u56de\u8c03\n\n\nFn\n\n\n\n\n\n\n\n\nonImageClick\n\n\n\u56fe\u7247\u70b9\u51fb\u4e8b\u4ef6\n\n\nFn\n\n\ntrue\n\n\n\n\n\n\nscope\n\n\n\u8be5\u63a7\u4ef6\u4e8b\u4ef6\u7684\u4e0a\u4e0b\u6587\n\n\n\n\n\n\n\n\n\n\nloop\n\n\n\u662f\u5426\u5faa\u73af\u64ad\u653e\n\n\nbool\n\n\nfalse\n\n\n\n\n\n\nshowNav\n\n\n\u662f\u5426\u663e\u793a\u5bfc\u822a\n\n\nbool\n\n\ntrue\n\n\n\n\n\n\nautoPlay\n\n\n\u81ea\u52a8\u64ad\u653e\n\n\nbool\n\n\ntrue\n\n\n\n\n\n\nshowArrows\n\n\n\u662f\u5426\u663e\u793a\u524d\u540e\u7bad\u5934\n\n\nbool\n\n\nfalse\n\n\n\n\n\n\ndefaultImageUrl\n\n\n\u9ed8\u8ba4\u56fe\uff0c\u5f53\u6ca1\u6709\u56fe\u7247\u6570\u636e\u7684\u65f6\u5019\u9ed8\u8ba4\u663e\u793a\n\n\n\u56fe\u7247\u5730\u5740\n\n\n\n\n\n\n\n\ncontainer\n\n\n\u5916\u90e8\u5bb9\u5668\n\n\nstring node\n\n\n\n\n\n\n\n\n\n\n\u5b9e\u4f8b\u65b9\u6cd5\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\ngoto\n\n\n\u8df3\u8f6c\u81f3\u6307\u5b9a\u7d22\u5f15\u56fe\u7247\n\n\nindex\n\n\n\u9700\u8981\u5207\u6362\u7684\u8f6e\u64ad\u56fe\u7d22\u5f15\uff0c\u4ece0\u5f00\u59cb\n\n\n\n\n\n\nnext\n\n\n\u5207\u6362\u81f3\u4e0b\u4e00\u5f20\n\n\n\n\n\n\n\n\n\n\npre\n\n\n\u5207\u6362\u81f3\u4e0a\u4e00\u5f20",
+            "title": "Slider"
+        },
+        {
+            "location": "/components/slider/#_1",
+            "text": "\u4e3b\u8981\u7528\u4e8e\u56fe\u7247\u4ee5\u53ca\u6587\u5b57\u7684\u8f6e\u64ad\u7ec4\u4ef6",
+            "title": "\u8f6e\u64ad\u7ec4\u4ef6"
+        },
+        {
+            "location": "/components/slider/#_2",
+            "text": "var data = [\n    { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },\n    { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },\n    { id: 3, src: 'imagesDEMO/slider-3.jpg', href: './res/img/3.jpg' },\n    { id: 4, src: 'imagesDEMO/slider-4.jpg', href: './res/img/4.jpg' }\n];\nvar imgSlider02 = new jam.UIImageSlider({\n    images: data,\n    autoPlay: true,\n    loop: true,\n    imageSize: {\n        width: '360px',\n        height: '202px'\n    },\n    showArrows: true,\n    showNav: true,\n    container: $('.sliderWrap')\n});\nimgSlider02.play();",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/components/slider/#_3",
+            "text": "",
+            "title": "\u4ee3\u7801\u6f14\u793a"
+        },
+        {
+            "location": "/components/slider/#_4",
+            "text": "var data = [\n    { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },\n    { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },\n    { id: 3, src: 'imagesDEMO/slider-3.jpg', href: './res/img/3.jpg' },\n    { id: 4, src: 'imagesDEMO/slider-4.jpg', href: './res/img/4.jpg' }\n];\nvar imgSlider02 = new jam.UIImageSlider({\n    images: data,\n    autoPlay: true,\n    loop: true,\n    imageSize: {\n        width: '360px',\n        height: '202px'\n    },\n    showArrows: true,\n    showNav: true,\n    container: $('.sliderWrap')\n});\nimgSlider02.play();  \n    var data = [\n        { id: 1, src: '/imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },\n        { id: 2, src: '/imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },\n        { id: 3, src: '/imagesDEMO/slider-3.jpg', href: './res/img/3.jpg' },\n        { id: 4, src: '/imagesDEMO/slider-4.jpg', href: './res/img/4.jpg' }\n    ];\n    var imgSlider02 = new jam.UIImageSlider({\n        images: data,\n        autoPlay: true,\n        loop: true,\n        imageSize: {\n            width: '360px',\n            height: '202px'\n        },\n        showArrows: true,\n        showNav: true,\n        container: $('.sliderWrap')\n    });\n    imgSlider02.play();",
+            "title": "\u57fa\u7840\u7528\u6cd5"
+        },
+        {
+            "location": "/components/slider/#api",
+            "text": "\u53c2\u6570  \u8bf4\u660e  \u7c7b\u578b  \u9ed8\u8ba4\u503c      images  \u7528\u4e8e\u8bbe\u7f6e\u5185\u5bb9\uff08\u56fe\u7247\u3001\u6587\u5b57\uff09  array     autoPlay  \u81ea\u52a8\u64ad\u653e  bool  true    delay  \u81ea\u52a8\u64ad\u653e\u5ef6\u8fdf(\u5355\u4f4d\uff1a\u79d2)  number  3    dir  \u8f6e\u64ad\u65b9\u5411  'LEFT'\u6216'RIGHT'  LEFT    errorImageUrl  \u56fe\u7247\u52a0\u8f7d \u5931\u8d25/\u9519\u8bef \u540e\u663e\u793a\u7684\u56fe\u7247      loadImageUrl  \u56fe\u7247\u52a0\u8f7d\u4e2d\u663e\u793a\u7684\u56fe\u7247      index  \u5f53\u524d\u7684\u7d22\u5f15      onChanged  \u8f6e\u64ad\u7ed3\u675f\u65f6\u7684\u56de\u8c03  Fn     onImageClick  \u56fe\u7247\u70b9\u51fb\u4e8b\u4ef6  Fn  true    scope  \u8be5\u63a7\u4ef6\u4e8b\u4ef6\u7684\u4e0a\u4e0b\u6587      loop  \u662f\u5426\u5faa\u73af\u64ad\u653e  bool  false    showNav  \u662f\u5426\u663e\u793a\u5bfc\u822a  bool  true    autoPlay  \u81ea\u52a8\u64ad\u653e  bool  true    showArrows  \u662f\u5426\u663e\u793a\u524d\u540e\u7bad\u5934  bool  false    defaultImageUrl  \u9ed8\u8ba4\u56fe\uff0c\u5f53\u6ca1\u6709\u56fe\u7247\u6570\u636e\u7684\u65f6\u5019\u9ed8\u8ba4\u663e\u793a  \u56fe\u7247\u5730\u5740     container  \u5916\u90e8\u5bb9\u5668  string node",
+            "title": "API"
+        },
+        {
+            "location": "/components/slider/#_5",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      goto  \u8df3\u8f6c\u81f3\u6307\u5b9a\u7d22\u5f15\u56fe\u7247  index  \u9700\u8981\u5207\u6362\u7684\u8f6e\u64ad\u56fe\u7d22\u5f15\uff0c\u4ece0\u5f00\u59cb    next  \u5207\u6362\u81f3\u4e0b\u4e00\u5f20      pre  \u5207\u6362\u81f3\u4e0a\u4e00\u5f20",
+            "title": "\u5b9e\u4f8b\u65b9\u6cd5"
+        },
+        {
+            "location": "/components/switch/",
+            "text": "\u5f00\u5173\u9009\u62e9\u5668\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nnew jam.cUISwitch({\n    checked: false,\n    rootBox: $('.switch-wrap')\n});\n\n\n\n\u4ee3\u7801\u6f14\u793a\n\n\n\n\n\n    new jam.cUISwitch({\n        checked: false,\n        rootBox: $('.switch-wrap')\n    });\n\n\n\nAPI\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nprefix\n\n\n\u524d\u7f00\n\n\nString\n\n\n'jui'\n\n\n\n\n\n\n\n\n\u5b9e\u4f8b\u65b9\u6cd5\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nchecked\n\n\n\u5c06\u63a7\u4ef6\u7f6e\u4e3a\u9009\u62e9\n\n\n\n\n\n\n\n\n\n\ngetStatus\n\n\n\u83b7\u5f97\u5f53\u524d\u63a7\u4ef6\u662f\u5426\u9009\u62e9",
+            "title": "Switch"
+        },
+        {
+            "location": "/components/switch/#_1",
+            "text": "new jam.cUISwitch({\n    checked: false,\n    rootBox: $('.switch-wrap')\n});",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/components/switch/#_2",
+            "text": "new jam.cUISwitch({\n        checked: false,\n        rootBox: $('.switch-wrap')\n    });",
+            "title": "\u4ee3\u7801\u6f14\u793a"
+        },
+        {
+            "location": "/components/switch/#api",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      prefix  \u524d\u7f00  String  'jui'",
+            "title": "API"
+        },
+        {
+            "location": "/components/switch/#_3",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      checked  \u5c06\u63a7\u4ef6\u7f6e\u4e3a\u9009\u62e9      getStatus  \u83b7\u5f97\u5f53\u524d\u63a7\u4ef6\u662f\u5426\u9009\u62e9",
+            "title": "\u5b9e\u4f8b\u65b9\u6cd5"
+        },
+        {
+            "location": "/components/toast/",
+            "text": "toast\u7ec4\u4ef6\n\n\n\n    var toast = new jam.cUIToast({\n        title: '\u5e26\u8499\u7248\uff0c\u70b9\u51fb\u8499\u7248\u4e0d\u5173\u95ed\uff0c3\u79d2\u5173\u95ed',\n        disableScroll: true,\n        sleep: 3,\n        needMaskHide: false,\n        // prefix: 'xxxx-',\n        delayCallback: function(){\n            console.log('\u5173\u95ed')\n        }\n    });\n    $('#button1').on('click', function () {\n        toast.show();\n    })\n\n\n\n\n\u5b9e\u4f8b\u4ee3\u7801\n\n\nvar toast = new jam.cUIToast({\n    title: '\u5e26\u8499\u7248\uff0c\u70b9\u51fb\u8499\u7248\u4e0d\u5173\u95ed\uff0c3\u79d2\u5173\u95ed',\n    disableScroll: true,\n    sleep: 3,\n    needMaskHide: false,\n    // prefix: 'xxxx-',\n    delayCallback: function(){\n        console.log('\u5173\u95ed')\n    }\n});\ntoast.show();\n\n\n\n\u4ee3\u7801\u6f14\u793a\n\n\n\u6253\u5f00toast\n\n\nAPI\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nneedMaskHide\n\n\n\u662f\u5426\u9700\u8981\u70b9\u51fb\u8499\u7248\u5220\u9664\n\n\nbool\n\n\nfalse\n\n\n\n\n\n\ntitle\n\n\n\u63d0\u793a\u6587\u5b57\n\n\nString\n\n\n'\u60a8\u597d\uff01'\n\n\n\n\n\n\nsleep\n\n\n\u6301\u7eed\u65f6\u95f4\n\n\nnumber\n\n\n\n\n\n\n\n\nprefix\n\n\n\u524d\u7f00\n\n\nString\n\n\n'jui'\n\n\n\n\n\n\ndelayCallback\n\n\n\u5173\u95ed\n\n\nFn\n\n\n\n\n\n\n\n\n\n\n\u5b9e\u4f8b\u65b9\u6cd5\n\n\n\n\n\n\n\n\n\u65b9\u6cd5\u540d\n\n\n\u8bf4\u660e\n\n\n\u53c2\u6570\u540d\n\n\n\u53c2\u6570\u63cf\u8ff0\n\n\n\n\n\n\n\n\n\n\nshow\n\n\n\u663e\u793a",
+            "title": "Toast"
+        },
+        {
+            "location": "/components/toast/#_1",
+            "text": "var toast = new jam.cUIToast({\n    title: '\u5e26\u8499\u7248\uff0c\u70b9\u51fb\u8499\u7248\u4e0d\u5173\u95ed\uff0c3\u79d2\u5173\u95ed',\n    disableScroll: true,\n    sleep: 3,\n    needMaskHide: false,\n    // prefix: 'xxxx-',\n    delayCallback: function(){\n        console.log('\u5173\u95ed')\n    }\n});\ntoast.show();",
+            "title": "\u5b9e\u4f8b\u4ee3\u7801"
+        },
+        {
+            "location": "/components/toast/#_2",
+            "text": "\u6253\u5f00toast",
+            "title": "\u4ee3\u7801\u6f14\u793a"
+        },
+        {
+            "location": "/components/toast/#api",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      needMaskHide  \u662f\u5426\u9700\u8981\u70b9\u51fb\u8499\u7248\u5220\u9664  bool  false    title  \u63d0\u793a\u6587\u5b57  String  '\u60a8\u597d\uff01'    sleep  \u6301\u7eed\u65f6\u95f4  number     prefix  \u524d\u7f00  String  'jui'    delayCallback  \u5173\u95ed  Fn",
+            "title": "API"
+        },
+        {
+            "location": "/components/toast/#_3",
+            "text": "\u65b9\u6cd5\u540d  \u8bf4\u660e  \u53c2\u6570\u540d  \u53c2\u6570\u63cf\u8ff0      show  \u663e\u793a",
+            "title": "\u5b9e\u4f8b\u65b9\u6cd5"
+        }
+    ]
+}

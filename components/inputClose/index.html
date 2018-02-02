@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>inputClose - jam-framework Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "inputClose";
+    var mkdocs_page_input_path = "components\\inputClose.md";
+    var mkdocs_page_url = "/components/inputClose/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> jam-framework Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Api</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../api/ajax/">Ajax</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../api/map/">Map</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../api/set/">Set</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Components</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../alert/">Alert</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">inputClose</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">实例代码</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_2">代码演示</a></li>
+    
+
+    <li class="toctree-l3"><a href="#api">API</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_3">实例方法</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../loading/">Loading</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mask/">Mask</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../slider/">Slider</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switch/">Switch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../toast/">Toast</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">jam-framework Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Components &raquo;</li>
+        
+      
+    
+    <li>inputClose</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><link rel="stylesheet" href="/style/jam.css">
+<script src="/dist/jquery.min.js"></script>
+<script src="/dist/require.min.js"></script>
+<script src="/dist/underscore.js"></script>
+<script src="/dist/mustache.js"></script>
+<script src="/dist/jam.js"></script>
+<style>
+    .clear-input-box input[type="text"] {
+        background-color: transparent;
+        box-shadow: none;
+    }
+</style>
+带关闭按钮的input框</p>
+<h2 id="_1">实例代码</h2>
+<pre><code>new jam.cUIInputClear($('.input-text'));
+</code></pre>
+<h2 id="_2">代码演示</h2>
+<p><input disabled class="input-text" type="text" placeholder="disabled">
+<input class="input-text" type="text" placeholder="支持placeholder">
+<script>
+    new jam.cUIInputClear($('.input-text'));
+</script></p>
+<h2 id="api">API</h2>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+<th align="center">参数名</th>
+<th align="center">参数描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">input</td>
+<td align="center">需要带close的input</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">clearClass</td>
+<td align="center">clear的类名</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">clearCallback</td>
+<td align="center">点击关闭之后的回调</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">offset</td>
+<td align="center">close图标的位置</td>
+<td align="center">{left:0,top:0}</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">实例方法</h2>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+<th align="center">参数名</th>
+<th align="center">参数描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">show</td>
+<td align="center">显示</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../loading/" class="btn btn-neutral float-right" title="Loading">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../alert/" class="btn btn-neutral" title="Alert"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../alert/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../loading/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

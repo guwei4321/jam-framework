@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Mask - jam-framework Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Mask";
+    var mkdocs_page_input_path = "components\\mask.md";
+    var mkdocs_page_url = "/components/mask/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> jam-framework Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Api</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../api/ajax/">Ajax</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../api/map/">Map</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../api/set/">Set</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Components</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../alert/">Alert</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../inputClose/">inputClose</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../loading/">Loading</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Mask</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">遮罩层组件</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">实例代码</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">代码演示</a></li>
+        
+            <li><a class="toctree-l4" href="#api">API</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">实例方法</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../slider/">Slider</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../switch/">Switch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../toast/">Toast</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">jam-framework Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Components &raquo;</li>
+        
+      
+    
+    <li>Mask</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><link rel="stylesheet" href="/style/jam.css">
+<script src="/dist/jquery.min.js"></script>
+<script src="/dist/require.min.js"></script>
+<script src="/dist/underscore.js"></script>
+<script src="/dist/mustache.js"></script>
+<script src="/dist/jam.js"></script></p>
+<h1 id="_1">遮罩层组件</h1>
+<p>遮罩层</p>
+<h2 id="_2">实例代码</h2>
+<pre><code>var mask = new jam.cUIMask({
+    rootBox: $('#JMaskWrap')
+});
+mask.show();
+</code></pre>
+<h2 id="_3">代码演示</h2>
+<p><div id="JMaskWrap" class="maskWrap" style="position:relative;width:400px;height: 400px;background-color:#2980B9;"></div></p>
+<p><button id="btn-mask">局部遮罩</button>
+<button id="btn-mask2">全局遮罩</button></p>
+<script>
+    var mask = new jam.cUIMask({
+        rootBox: $('#JMaskWrap')
+    });
+    $('#btn-mask').on('click', function(){
+        mask.show(); 
+    })
+    var mask2 = new jam.cUIMask({
+    });
+    $('#btn-mask2').on('click', function(){
+        mask2.show(); 
+    })
+</script>
+
+<h2 id="api">API</h2>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">说明</th>
+<th align="center">类型</th>
+<th align="center">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">needMaskHide</td>
+<td align="center">是否需要点击蒙版删除</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">loadHtml</td>
+<td align="center">loading内容</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">sleep</td>
+<td align="center">持续时间</td>
+<td align="center">number</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">prefix</td>
+<td align="center">前缀</td>
+<td align="center">string</td>
+<td align="center">jui</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">实例方法</h2>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+<th align="center">参数名</th>
+<th align="center">参数描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">show</td>
+<td align="center">显示</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">hide</td>
+<td align="center">关闭</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../slider/" class="btn btn-neutral float-right" title="Slider">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../loading/" class="btn btn-neutral" title="Loading"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../loading/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../slider/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Home - jam-framework Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> jam-framework Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Home</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">简介</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">使用</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_3">框架基础类说明</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Api</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="api/ajax/">Ajax</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="api/map/">Map</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="api/set/">Set</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Components</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="components/alert/">Alert</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="components/inputClose/">inputClose</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="components/loading/">Loading</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="components/mask/">Mask</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="components/slider/">Slider</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="components/switch/">Switch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="components/toast/">Toast</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">jam-framework Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="_1">简介</h2>
+<p><code>jam-framework</code>是一个PC端JS框架。秉持 “如果有小而美的轮子，就不再造轮子” 宗旨在不断造轮子。</p>
+<p><code>jam-framework</code>除了使用jQuery这个比较大的DOM操作库，其他都是<code>jam-framework</code>自己再造的轮子。使用<code>jQuery</code>而不使用<code>react</code>，是为了降低框架使用门槛，让后端人员也能拿来即用。</p>
+<p><code>jam-framework</code> 使用了以下第三方库：</p>
+<ul>
+<li>模块化：jam框架内部使用AMD规范，使用了<a href="http://www.requirejs.org/">require.js </a>。</li>
+<li>模板： <a href="https://mustache.github.io/">mustache</a>，虽然<code>mustache</code>只能做简单的四则运算和Boolen判断，但是它小而精悍。</li>
+<li>DOM操作： <a href="http://jquery.com/">jQuery</a>，后端人员也很熟悉的DOM操作库。</li>
+<li>工具函数： <a href="http://underscorejs.org/">Underscope</a>，弥补模板的运算的不足。</li>
+</ul>
+<p>现在已经完成的分基础类跟UI类组件两部分：
+<em> UI组件：有图片轮换、遮罩层、弹出层；
+</em> 基础类组件：ajax等轮子。</p>
+<p>后续会不断完善更新更好的小轮子......</p>
+<p>框架内部使用了AMD规范，但是使用<code>jam-framework</code>可以不用引入<code>require.js</code>，因为框架内部已经将<code>jam</code>暴露到全局变量，所以引用<code>jam.js</code>之后，可以直接使用<code>jam</code>对象内的组件。</p>
+<h2 id="_2">使用</h2>
+<p>npm 下载</p>
+<pre><code>npm install jam-framework
+</code></pre>
+<p>首先引入样式</p>
+<pre><code>&lt;link rel="stylesheet" href="jam-framework/jam.css"&gt;
+</code></pre>
+<p>然后引入Js文件</p>
+<pre><code>&lt;script src="jam-framework/jam.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>最后，你只需要像下面那样将类实例化出来就可以了</p>
+<pre><code>//  alert实例化
+var alert = new jam.cUIAlert({
+    showTitle: true,
+    title: '头部',
+    message: '内容',
+    needMask: true,
+    needMaskHide: true,
+    disableScroll: false,
+    buttons: [
+        {
+            text: '你确定?',
+            click: function () {
+                this.hide();
+            }
+        },
+        {
+            type: 'cancel',
+            text: '取消!',
+            click: function () {
+                this.hide();
+            }
+        }
+    ]
+});
+// show实例化出来的 alert 
+alert.show();
+</code></pre>
+<h2 id="_3">框架基础类说明</h2>
+<p>框架内的组件的<code>Class</code>类，都是通过构造函数以及通过原型链模拟的，而很多组件也是通过<code>Class</code>来继承的。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api/ajax/" class="btn btn-neutral float-right" title="Ajax">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="api/ajax/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="./js/theme.js"></script>
+      <script src="./search/require.js"></script>
+      <script src="./search/search.js"></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.17.2
+Build Date UTC : 2018-02-02 08:48:29
+-->

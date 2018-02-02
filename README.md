@@ -20,4 +20,4 @@
 
 框架内部使用了AMD规范，但是使用`jam-framework`可以不用引入`require.js`，因为框架内部已经将`jam`暴露到全局变量，所以引用`jam.js`之后，可以直接使用`jam`对象内的组件。
 
-[文档地址](https://guwei4321.github.com/jam-framework)
+[文档地址](https://guwei4321.github.io/jam-framework/)

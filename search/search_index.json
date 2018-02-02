@@ -27,53 +27,28 @@
         },
         {
             "location": "/api/ajax/#get",
-            "text": "AJAX GET\u65b9\u5f0f\u8bbf\u95ee\u63a5\u53e3",
+            "text": "AJAX GET\u65b9\u5f0f\u8bbf\u95ee\u63a5\u53e3  \u5b9e\u4f8b\u4ee3\u7801  jam.ajax.get({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
             "title": "get\u65b9\u6cd5"
         },
         {
-            "location": "/api/ajax/#_1",
-            "text": "jam.ajax.get({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
-            "title": "\u5b9e\u4f8b\u4ee3\u7801"
-        },
-        {
             "location": "/api/ajax/#post",
-            "text": "AJAX POST\u65b9\u5f0f\u8bbf\u95ee\u63a5\u53e3",
+            "text": "AJAX POST\u65b9\u5f0f\u8bbf\u95ee\u63a5\u53e3  \u5b9e\u4f8b\u4ee3\u7801  jam.ajax.post({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
             "title": "post\u65b9\u6cd5"
         },
         {
-            "location": "/api/ajax/#_2",
-            "text": "jam.ajax.post({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
-            "title": "\u5b9e\u4f8b\u4ee3\u7801"
-        },
-        {
             "location": "/api/ajax/#jsonp",
-            "text": "\u4ee5GET\u65b9\u5f0f\u8de8\u57df\u8bbf\u95ee\u5916\u90e8\u63a5\u53e3",
+            "text": "\u4ee5GET\u65b9\u5f0f\u8de8\u57df\u8bbf\u95ee\u5916\u90e8\u63a5\u53e3  \u5b9e\u4f8b\u4ee3\u7801  jam.ajax.jsonp({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
             "title": "jsonp\u65b9\u6cd5"
         },
         {
-            "location": "/api/ajax/#_3",
-            "text": "jam.ajax.jsonp({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
-            "title": "\u5b9e\u4f8b\u4ee3\u7801"
-        },
-        {
             "location": "/api/ajax/#cros",
-            "text": "\u4ee5POST\u65b9\u6cd5\u8de8\u57df\u8bbf\u95ee\u5916\u90e8\u63a5\u53e3",
+            "text": "\u4ee5POST\u65b9\u6cd5\u8de8\u57df\u8bbf\u95ee\u5916\u90e8\u63a5\u53e3  \u5b9e\u4f8b\u4ee3\u7801  jam.ajax.cros({\n    url: '',\n    data: {...},\n    type: 'get',\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    type  \u8bf7\u6c42\u65b9\u5f0f    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
             "title": "cros\u65b9\u6cd5"
         },
         {
-            "location": "/api/ajax/#_4",
-            "text": "jam.ajax.cros({\n    url: '',\n    data: {...},\n    type: 'get',\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    type  \u8bf7\u6c42\u65b9\u5f0f    data  \u8bf7\u6c42\u6570\u636e    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
-            "title": "\u5b9e\u4f8b\u4ee3\u7801"
-        },
-        {
             "location": "/api/ajax/#form",
-            "text": "AJAX \u63d0\u4ea4\u8868\u5355,\u4e0d\u80fd\u8de8\u57df",
+            "text": "AJAX \u63d0\u4ea4\u8868\u5355,\u4e0d\u80fd\u8de8\u57df  \u5b9e\u4f8b\u4ee3\u7801  jam.ajax.form({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    form  \u53ef\u4ee5\u662fdom\u5bf9\u8c61\uff0cdom id \u6216\u8005jquery \u5bf9\u8c61    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
             "title": "form\u65b9\u6cd5"
-        },
-        {
-            "location": "/api/ajax/#_5",
-            "text": "jam.ajax.form({\n    url: '',\n    data: {...},\n    callback: function(){\n        ...\n    },\n    error: function(){\n        ...\n    }\n})     \u53c2\u6570\u540d  \u8bf4\u660e      url  \u8bf7\u6c42\u5730\u5740    form  \u53ef\u4ee5\u662fdom\u5bf9\u8c61\uff0cdom id \u6216\u8005jquery \u5bf9\u8c61    callback  \u6210\u529f\u4e4b\u540e\u7684\u56de\u8c03    error  \u9519\u8bef\u76f4\u8d70\u7684\u56de\u8c03",
-            "title": "\u5b9e\u4f8b\u4ee3\u7801"
         },
         {
             "location": "/api/map/",

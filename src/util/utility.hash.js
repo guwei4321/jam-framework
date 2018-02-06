@@ -1,6 +1,7 @@
 /**
- * @class Hash
- */
+* @class Hash
+* @description 对Object提供一些常用方法
+*/
 define(['../core/core.inherit'], function (cCoreInherit) {
 
     /**

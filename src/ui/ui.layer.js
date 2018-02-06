@@ -22,6 +22,7 @@ define(['../common/base', './ui.abstract.view', './ui.mask'], function (cBase, A
         this.setIntervalTotal = 0;
     };
 
+    // 重置基础属性
     options._resetDefaultProperty = function () {
         // 是否需要蒙版
         this.needMask = true;

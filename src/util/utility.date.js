@@ -1,7 +1,10 @@
+/**
+* @class Date
+* @description 对时间提供一些常用方法
+*/
 define(['../core/core.inherit', './utility.servertime'], function (inherit, UtilityServertime) {
     var Base = {};
 
-    /* Date对象，对时间提供一些常用方法 */
     Base.Date = new inherit.Class({
 
         initialize: function (date) {

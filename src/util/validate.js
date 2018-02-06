@@ -1,4 +1,8 @@
-﻿define([], function () {
+﻿/**
+ * @class validators
+ * @description 常用的验证方法
+ */
+define([], function () {
 
     var result = {};
     _toString = Object.prototype.toString;

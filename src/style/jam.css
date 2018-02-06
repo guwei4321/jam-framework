@@ -1,5 +1,4 @@
-/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
-html {
+/* html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -212,7 +211,7 @@ input::-moz-placeholder {
 
 input::-webkit-input-placeholder {
     color: #aaa;
-}
+} */
 
 .jui-mask {
     background-color: rgba(0,0,0,.6);
@@ -509,6 +508,18 @@ input::-webkit-input-placeholder {
     left: 50%;
     margin: -8px 0 0 -8px;
     background: #b1b1b1
+}
+
+.clear-input-box input{
+    width: 100%;
+    border: 1px solid #bbb;
+    padding: 0 10px;
+    background: transparent;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    color: #333;
 }
 
 .clear-input span:before,.clear-input span:after {

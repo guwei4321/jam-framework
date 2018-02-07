@@ -24,6 +24,7 @@ define(['../common/base', './ui.abstract.view'], function (cBase, AbstractView) 
 
     /** 可以传入rootBox已经changed两个参数，一个是控件所处位置，一个是选项改变时候需要触发的事件 */
     options.initialize = function ($super, opts) {
+        console.log(opts)
         this.bindEvent();
         this.allowsConfig.changed = true; //开启changed
         this.checkedFlag = opts.checked;

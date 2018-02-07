@@ -4,13 +4,19 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const uglify = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry:{
-    jam: './src/index.js'
-  },
-  output: {
-      filename: 'bundle.js',
+    entry: {
+        jam: './src/index.js'
+    },
+    output: {
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
-  },
+    },
+    externals: {
+        "jquery": "jQuery",
+        "$": "jQuery",
+        "_": "underscore",
+        "mustache": 'mustache'
+    },
     module: {
         rules: [
             {
@@ -26,40 +32,24 @@ module.exports = {
                 }]
             }
         ]
-    }, 
-  plugins: [
-      new webpack.optimize.UglifyJsPlugin({
-          compress: {
-              warnings: false,
-              comparisons: false
-          },
-          ecma: 5,
-          mangle: false,
-          output: {
-          },
-          sourceMap: true
-      }),
-    //   new webpack.optimize.CommonsChunkPlugin({
-    //       name: 'manifest',
-    //       chunks: ['vendor']
-    //   })
+    },
+    plugins: [
         new CleanWebpackPlugin('dist'),
-      new webpack.optimize.ModuleConcatenationPlugin(),
-        // new uglify
-//         // new webpack.optimize.CommonsChunkPlugin({
-//         //     children: true,
-//         //     minChunks: Infinity,
-//         //     async: false
-//         // })
-//         // new webpack.optimize.CommonsChunkPlugin({
-//         //   name: "vendor",
-//         //   minChunks: function(module){
-//         //     return module.context && module.context.includes("node_modules");
-//         //   }
-//         // }),
-//         // new webpack.optimize.CommonsChunkPlugin({
-//         //   name: "manifest",
-//         //   minChunks: Infinity
-//         // }),
+        new webpack.optimize.UglifyJsPlugin({
+            show_copyright: false,
+            comments: false,
+            compress: {
+            warnings: false,
+            drop_debugger: true,
+                drop_console: true
+            },
+            ie8: true,
+            ecma: 5,
+            mangle: {
+                except: ['$super']
+            },
+            sourceMap: false
+        }),
+        new webpack.optimize.ModuleConcatenationPlugin()
     ]
 };

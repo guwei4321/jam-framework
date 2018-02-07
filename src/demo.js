@@ -11,7 +11,6 @@
         sMap.set(1, 'aaa')
         sMap.set(1, 'bbb')
         sMap.set(['a'],222);
-        console.log(sMap)
         var data = [
             { id: 1, src: 'imagesDEMO/slider-1.jpg', href: './res/img/1.jpg' },
             { id: 2, src: 'imagesDEMO/slider-2.jpg', href: './res/img/2.jpg' },

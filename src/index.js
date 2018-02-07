@@ -13,6 +13,6 @@
     ajax: ajax
   }
   window.jam = jam;
-  return jam;
+  // return jam;
 
 })

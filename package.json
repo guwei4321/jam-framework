@@ -1,6 +1,6 @@
 {
   "name": "jam-framework",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "pc js ui framework",
   "main": "index.js",
   "scripts": {

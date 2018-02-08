@@ -1,3 +1,7 @@
+/**
+* @class util
+* @description 扩展的一些常用方法
+*/
 define(['./utility.hash', './utility.date', './utility.servertime', './validate'], function (UtilityHash, UtilityDate, UtilityServertime, Validate) {
     /**
     * @private

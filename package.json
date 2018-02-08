@@ -1,6 +1,6 @@
 {
   "name": "jam-framework",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "pc js ui framework",
   "main": "index.js",
   "scripts": {
@@ -15,10 +15,8 @@
   "author": "guwei",
   "license": "ISC",
   "devDependencies": {
-    "clean-webpack-plugin": "^0.1.17",
-    "css-loader": "^0.28.9",
-    "style-loader": "^0.19.1",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.9.1"
+    "mustache": "^2.3.0",
+    "jquery": "^1.8.3",
+    "underscore": "^1.8.3"
   }
 }

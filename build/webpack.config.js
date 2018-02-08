@@ -5,11 +5,11 @@ const uglify = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: {
-        jam: './src/index.js'
+        jam: '../src/index.js'
     },
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: 'jam.js',
+        path: path.resolve(__dirname, '../dist')
     },
     externals: {
         "jquery": "jQuery",
@@ -34,7 +34,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin('dist'),
+        new CleanWebpackPlugin('../dist'),
         new webpack.optimize.UglifyJsPlugin({
             show_copyright: false,
             comments: false,

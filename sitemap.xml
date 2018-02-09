@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,19 +13,19 @@
         
     <url>
      <loc>/api/ajax/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/map/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/set/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -35,43 +35,77 @@
         
     <url>
      <loc>/components/alert/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/components/inputClose/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/components/loading/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/components/mask/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/components/slider/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/components/switch/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/components/toast/</loc>
-     <lastmod>2018-02-02</lastmod>
+     <lastmod>2018-02-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/util/date/</loc>
+     <lastmod>2018-02-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/util/hash/</loc>
+     <lastmod>2018-02-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/util/servertime/</loc>
+     <lastmod>2018-02-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/util/utility/</loc>
+     <lastmod>2018-02-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/util/validate/</loc>
+     <lastmod>2018-02-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

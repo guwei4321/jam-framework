@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Set - jam-framework Docs</title>
+  <title>Validate - jam-framework Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Set";
-    var mkdocs_page_input_path = "api\\set.md";
-    var mkdocs_page_url = "/api/set/";
+    var mkdocs_page_name = "Validate";
+    var mkdocs_page_input_path = "util\\validate.md";
+    var mkdocs_page_url = "/util/validate/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -58,24 +58,15 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../ajax/">Ajax</a>
+    <a class="" href="../../api/ajax/">Ajax</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../map/">Map</a>
+    <a class="" href="../../api/map/">Map</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Set</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">实例代码</a></li>
-    
-
-    <li class="toctree-l3"><a href="#api">API</a></li>
-    
-
-    </ul>
+    <a class="" href="../../api/set/">Set</a>
                 </li>
     </ul>
 	    </li>
@@ -121,23 +112,32 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../util/date/">Date</a>
+    <a class="" href="../date/">Date</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../util/hash/">Hash</a>
+    <a class="" href="../hash/">Hash</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../util/servertime/">Servertime</a>
+    <a class="" href="../servertime/">Servertime</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../util/utility/">Utility</a>
+    <a class="" href="../utility/">Utility</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../util/validate/">Validate</a>
+    <a class="current" href="./">Validate</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">实例代码</a></li>
+    
+
+    <li class="toctree-l3"><a href="#api">API</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -164,11 +164,11 @@
     
       
         
-          <li>Api &raquo;</li>
+          <li>Util &raquo;</li>
         
       
     
-    <li>Set</li>
+    <li>Validate</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -178,10 +178,29 @@
           <div role="main">
             <div class="section">
               
-                <p>模拟 es6 set 数据结构</p>
+                <script src="https://guwei4321.github.io/jam-framework/dist/jquery.min.js"></script>
+
+<script src="https://guwei4321.github.io/jam-framework/dist/require.min.js"></script>
+
+<script src="https://guwei4321.github.io/jam-framework/dist/underscore.js"></script>
+
+<script src="https://guwei4321.github.io/jam-framework/dist/mustache.js"></script>
+
+<script src="https://guwei4321.github.io/jam-framework/dist/jam.js"></script>
+
+<p>平时开发中用到的一些常用的验证方法集合。</p>
+<script>
+    console.log(  )
+</script>
+
 <h2 id="_1">实例代码</h2>
-<pre><code>var items = new jam.jSet([1, 2, 3, 4, 5]);
-items.add(2);
+<pre><code>jam.validate.isChinese('123123') // false
+jam.validate.isChinese('hello') // false
+jam.validate.isChinese('哈喽') // true
+jam.validate.isMobile('13812341234') // true 手机号码
+jam.validate.isCellPhone('013812341234') // true 手机号码前面可+0
+jam.validate.isPhone('021-1231423') // true 座机号码
+jam.validate.isIdCard('430404196710021020') // true 身份证号码
 </code></pre>
 <h2 id="api">API</h2>
 <table>
@@ -195,27 +214,123 @@ items.add(2);
 </thead>
 <tbody>
 <tr>
-<td align="center">has</td>
-<td align="center">返回一个布尔值，表示该值存在与否。</td>
-<td align="center">value</td>
-<td align="center"></td>
+<td align="center">isEmail</td>
+<td align="center">验证邮箱</td>
+<td align="center">String</td>
+<td align="center">需要验证的邮箱</td>
 </tr>
 <tr>
-<td align="center">add</td>
-<td align="center">在Set对象尾部添加一个元素。返回该对象。</td>
-<td align="center">value</td>
-<td align="center"></td>
+<td align="center">isPassword</td>
+<td align="center">验证密码强度，6-20位大小写字母与数字组成</td>
+<td align="center">String</td>
+<td align="center">需要验证的密码</td>
 </tr>
 <tr>
-<td align="center">delete</td>
-<td align="center">移除Set的中与这个key对应的</td>
-<td align="center">value</td>
-<td align="center"></td>
+<td align="center">isMobile</td>
+<td align="center">验证手机号</td>
+<td align="center">String</td>
+<td align="center">需要验证的手机号</td>
 </tr>
 <tr>
-<td align="center">clear</td>
-<td align="center">清空改对象</td>
-<td align="center"></td>
+<td align="center">isChinese</td>
+<td align="center">验证中文字</td>
+<td align="center">String</td>
+<td align="center">需要验证的字符串</td>
+</tr>
+<tr>
+<td align="center">isEnglish</td>
+<td align="center">验证英文字母</td>
+<td align="center">String</td>
+<td align="center">需要验证的字符串</td>
+</tr>
+<tr>
+<td align="center">isZip</td>
+<td align="center">验证邮编</td>
+<td align="center">String</td>
+<td align="center">需要验证的邮编</td>
+</tr>
+<tr>
+<td align="center">isDate</td>
+<td align="center">验证日期格式</td>
+<td align="center">String</td>
+<td align="center">需要验证的日期</td>
+</tr>
+<tr>
+<td align="center">isNum</td>
+<td align="center">验证数字</td>
+<td align="center">String</td>
+<td align="center">需要验证的字符串</td>
+</tr>
+<tr>
+<td align="center">isCellPhone</td>
+<td align="center">验证座机号码格式</td>
+<td align="center">String</td>
+<td align="center">需要验证的座机号码</td>
+</tr>
+<tr>
+<td align="center">isIDCardNo</td>
+<td align="center">验证ID</td>
+<td align="center">String</td>
+<td align="center">需要验证的ID</td>
+</tr>
+<tr>
+<td align="center">isEnglishAndSpace</td>
+<td align="center">验证英文和英文空格</td>
+<td align="center">String</td>
+<td align="center">需要验证的字符串</td>
+</tr>
+<tr>
+<td align="center">isTraditional</td>
+<td align="center">验证繁体字</td>
+<td align="center">String</td>
+<td align="center">需要验证的字符串</td>
+</tr>
+<tr>
+<td align="center">isIdCard</td>
+<td align="center">验证身份证</td>
+<td align="center">String</td>
+<td align="center">需要验证的身份证号码 18位身份证号码</td>
+</tr>
+<tr>
+<td align="center">isRightVerifycode</td>
+<td align="center">验证验证码</td>
+<td align="center">String</td>
+<td align="center">4-30位小写字母以及数字</td>
+</tr>
+<tr>
+<td align="center">isAllowSetTradingPass</td>
+<td align="center">验证交易密码</td>
+<td align="center">String</td>
+<td align="center">禁止连续相同数字或者字母</td>
+</tr>
+<tr>
+<td align="center">isQq</td>
+<td align="center">验证QQ号码</td>
+<td align="center">String</td>
+<td align="center">需要验证的字符串</td>
+</tr>
+<tr>
+<td align="center">isPhone</td>
+<td align="center">验证座机号码</td>
+<td align="center">String</td>
+<td align="center">需要座机号码 带区号</td>
+</tr>
+<tr>
+<td align="center">isUrl</td>
+<td align="center">验证网站地址</td>
+<td align="center">String</td>
+<td align="center">需要验证的字符串</td>
+</tr>
+<tr>
+<td align="center">isIP</td>
+<td align="center">验证IP地址</td>
+<td align="center">String</td>
+<td align="center">需要验证的字符串</td>
+</tr>
+<tr>
+<td align="center">isEmptyObject</td>
+<td align="center">验证空对象</td>
+<td align="center">Json</td>
 <td align="center"></td>
 </tr>
 </tbody>
@@ -227,10 +342,8 @@ items.add(2);
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../components/alert/" class="btn btn-neutral float-right" title="Alert">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../map/" class="btn btn-neutral" title="Map"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../utility/" class="btn btn-neutral" title="Utility"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -256,10 +369,8 @@ items.add(2);
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../map/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../utility/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../../components/alert/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

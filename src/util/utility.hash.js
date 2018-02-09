@@ -44,7 +44,6 @@ define(['../core/core.inherit'], function (cCoreInherit) {
     options.initialize = function (obj) {
 
         /**
-        * @author : yq.zhang (Air) / cmli
         * @description : 修正初始化逻辑，将逻辑与 替换为 逻辑或
         */
         if (typeof obj !== 'object') {
